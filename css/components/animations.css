@@ -1,0 +1,237 @@
+/* ===== ESTILOS BASE (MOBILE-FIRST) ===== */
+.draggable-object {
+  font-size: 5.5rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  touch-action: none;
+  width: 12vw;
+  height: 12vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.draggable-object:hover {
+  transform: scale(1.05);
+}
+
+.draggable-object.dragging {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.correct-match {
+  animation: correctAnimation 0.6s ease;
+}
+
+.incorrect-match {
+  animation: incorrectAnimation 0.6s ease;
+  box-shadow: 0 0 10px #f44336;
+}
+
+@keyframes correctAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes incorrectAnimation {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-3px);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-3px);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.theme-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+.theme-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.theme-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.theme-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* ===== TABLETS (min-width: 768px) ===== */
+@media (min-width: 768px) {
+  .draggable-object {
+    font-size: 6.5rem;
+    width: 10vw;
+    height: 10vw;
+  }
+
+  @keyframes correctAnimation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/* ===== DESKTOP (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+  .draggable-object {
+    font-size: 6.5rem;
+    width: 140px;
+    height: 140px;
+  }
+
+  @keyframes correctAnimation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* ===== TELAS GRANDES (min-width: 1440px) ===== */
+@media (min-width: 1440px) {
+  .draggable-object {
+    font-size: 6rem;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ===== ORIENTAÇÃO PAISAGEM EM MOBILE (max-height: 500px) ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .shadow-item {
+    font-size: 5.5rem;
+    width: 110px;
+    height: 110px;
+  }
+
+  .draggable-object {
+    font-size: 5.5rem;
+    width: 110px;
+    height: 110px;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media (min-width: 1650px) {
+  .draggable-object {
+    justify-content: center;
+    align-items: center;
+    font-size: 6.5rem;
+    width: 140px;
+    height: 140px;
+  }
+}

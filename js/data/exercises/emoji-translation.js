@@ -1,0 +1,162 @@
+const EMOJI_TYPE = {
+  id: "emoji-translation",
+  name: "Exercício de Tradução",
+  image: "...",
+  objects: [
+    // === FÁCIL (Nível 1-2) ===
+    {
+      question: "2️⃣",
+      answer: "Dois",
+      options: ["One", "Two", "Four"],
+      correctOption: 1,
+      difficulty: "easy",
+      island: "numbers",
+    },
+    {
+      question: "🍎🍎🍎",
+      answer: "Três maçãs",
+      options: ["Two apples", "Three apples", "Four apples"],
+      correctOption: 1,
+      difficulty: "easy",
+      island: "numbers",
+    },
+    {
+      question: "☝️+✌️ = ?",
+      answer: "Cinco",
+      options: ["Five", "Four", "Three"],
+      correctOption: 2,
+      difficulty: "easy",
+      island: "numbers",
+    },
+
+    // === INTERMEDIÁRIO (Nível 3-4) ===
+    {
+      question: "☝️+🖐🏾 = ?",
+      answer: "Seis",
+      options: ["Six", "Two", "Four"],
+      correctOption: 0,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "✌🏾",
+      answer: "Dois",
+      options: ["Nine", "Two", "Eleven"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "🎁🎁🎁🎁",
+      answer: "Quatro presentes",
+      options: ["One gift", "Three gifts", "Four gifts"],
+      correctOption: 2,
+      difficulty: "medium",
+      island: "numbers",
+    },
+
+    // === DIFÍCIL (Nível 5-6) ===
+    {
+      question: "🔟",
+      answer: "Dez",
+      options: ["Ten", "Eleven", "Twelve"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+    {
+      question: "👩🏽‍👩🏽‍👧👨🏻‍👩🏻‍👧‍👦👩🏿‍👦👨🏾‍👨🏾‍👧👩🏻‍👧‍👧",
+      answer: "Cinco famílias felizes",
+      options: ["Five happy families", "Four families", "Six families"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+    {
+      question: "📕📕 + 📕 = ?",
+      answer: "Três livros",
+      options: ["Seven books", "Three books", "Nine books"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "👧🏾👦🏽",
+      answer: "Dois amigos",
+      options: ["Two friends", "One sister", "Seven days"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+
+    // === FÁCIL === verbs
+    {
+      question: "👧🏽 She is Happy 😁",
+      answer: "A menina está feliz",
+      options: [
+        "A menina está feliz",
+        "A menina está triste",
+        "A menina está dormindo",
+      ],
+      correctOption: 0,
+      difficulty: "easy",
+      island: "verbs",
+    },
+    {
+      question: "🐱 The cat is big",
+      answer: "O gato é grande",
+      type: "multiple_choice",
+      options: ["O gato é pequeno", "O gato é azul", "O gato é grande"],
+      correctOption: 2,
+      difficulty: "easy",
+      island: "verbs",
+    },
+
+    {
+      question: "👨🏾‍👩🏽‍👧 They are a family",
+      answer: "Eles são uma família",
+      options: ["Eles são uma família", "Eles são amigos", "Eles são vizinhos"],
+      correctOption: 0,
+      difficulty: "easy",
+      island: "verbs",
+    },
+
+    {
+      question: "📚 It is a book",
+      answer: "É um livro",
+      type: "multiple_choice",
+      options: ["É uma bola", "É um livro", "É uma cadeira"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "verbs",
+    },
+
+    {
+      question: "🏃 He runs",
+      answer: "Ele corre",
+      type: "multiple_choice",
+      options: ["Ele dorme", "Ele corre", "Ele canta"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "verbs",
+    },
+    {
+      question: "👧 She eats 🍎",
+      answer: "Ela come",
+      type: "multiple_choice",
+      options: ["Ela come", "Ela dorme", "Ela pula"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "verbs",
+    },
+    {
+      question: "🔴 The ball is red",
+      answer: "A bola é vermelha",
+      type: "multiple_choice",
+      options: ["A bola é vermelha", "A bola é azul", "A bola é verde"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "verbs",
+    },
+  ],
+};
