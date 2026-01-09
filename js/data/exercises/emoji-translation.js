@@ -1,0 +1,166 @@
+const EMOJI_TYPE = {
+  id: "emoji-translation",
+  name: "Ejercicio de Traducción",
+  image: "...",
+  objects: [
+    // === FÁCIL (Nivel 1-2) ===
+    {
+      question: "2️⃣",
+      answer: "Dos",
+      options: ["Uno", "Dos", "Cuatro"],
+      correctOption: 1,
+      difficulty: "easy",
+      island: "numbers",
+    },
+    {
+      question: "🍎🍎🍎",
+      answer: "Tres manzanas",
+      options: ["Dos manzanas", "Tres manzanas", "Cuatro manzanas"],
+      correctOption: 1,
+      difficulty: "easy",
+      island: "numbers",
+    },
+    {
+      question: "4️⃣+1️⃣ = ?",
+      answer: "Cinco",
+      options: ["Cinco", "Cuatro", "Tres"],
+      correctOption: 0,
+      difficulty: "easy",
+      island: "numbers",
+    },
+
+    // === INTERMEDIO (Nivel 3-4) ===
+    {
+      question: "4️⃣+👨‍👩‍👦 = ?",
+      answer: "Seis",
+      options: ["Seis", "Dos", "Cuatro"],
+      correctOption: 0,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "2️⃣👨‍👩‍👦",
+      answer: "Dos",
+      options: ["Nueve", "Dos", "Once"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "🎁🎁🎁🎁",
+      answer: "Cuatro regalos",
+      options: ["Un regalo", "Tres regalos", "Cuatro regalos"],
+      correctOption: 2,
+      difficulty: "medium",
+      island: "numbers",
+    },
+
+    // === DIFÍCIL (Nivel 5-6) ===
+    {
+      question: "🔟",
+      answer: "Diez",
+      options: ["Diez", "Once", "Doce"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+    {
+      question: "👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦👨‍👩‍👧‍👦",
+      answer: "Cinco familias felices",
+      options: ["Cinco familias felices", "Cuatro familias", "Seis familias"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+    {
+      question: "📚📚 + 📚 = ?",
+      answer: "Tres libros",
+      options: ["Siete libros", "Tres libros", "Nueve libros"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "numbers",
+    },
+    {
+      question: "👫👫",
+      answer: "Dos amigos",
+      options: ["Dos amigos", "Una hermana", "Siete días"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "numbers",
+    },
+
+    // === FÁCIL === verbs
+    {
+      question: "👧 Ela está feliz 😊",
+      answer: "La niña está feliz",
+      options: [
+        "La niña está feliz",
+        "La niña está triste",
+        "La niña está durmiendo",
+      ],
+      correctOption: 0,
+      difficulty: "easy",
+      island: "verbs",
+    },
+    {
+      question: "🐱 O gato é grande",
+      answer: "El gato es grande",
+      type: "multiple_choice",
+      options: ["El gato es pequeño", "El gato es azul", "El gato es grande"],
+      correctOption: 2,
+      difficulty: "easy",
+      island: "verbs",
+    },
+
+    {
+      question: "👨‍👩‍👧 Eles são uma família",
+      answer: "Ellos son una familia",
+      options: [
+        "Ellos son una familia",
+        "Ellos son amigos",
+        "Ellos son vecinos",
+      ],
+      correctOption: 0,
+      difficulty: "easy",
+      island: "verbs",
+    },
+
+    {
+      question: "📖 É um livro",
+      answer: "Es un libro",
+      type: "multiple_choice",
+      options: ["Es una pelota", "Es un libro", "Es una silla"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "verbs",
+    },
+
+    {
+      question: "🏃 Ele corre",
+      answer: "Él corre",
+      type: "multiple_choice",
+      options: ["Él duerme", "Él corre", "Él canta"],
+      correctOption: 1,
+      difficulty: "medium",
+      island: "verbs",
+    },
+    {
+      question: "👧 Ela come 🍎",
+      answer: "Ella come",
+      type: "multiple_choice",
+      options: ["Ella come", "Ella duerme", "Ella salta"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "verbs",
+    },
+    {
+      question: "🔴 A bola é vermelha",
+      answer: "La pelota es roja",
+      type: "multiple_choice",
+      options: ["La pelota es roja", "La pelota es azul", "La pelota es verde"],
+      correctOption: 0,
+      difficulty: "hard",
+      island: "verbs",
+    },
+  ],
+};
