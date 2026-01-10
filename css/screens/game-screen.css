@@ -36,7 +36,9 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg,
+    rgba(190, 76, 160, 0.9),
+    rgba(120, 32, 102, 0.9));
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -61,9 +63,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(0deg,
-      rgba(0, 123, 255, 1) 37%,
-      rgba(76, 198, 255, 1) 100%);
+  background: linear-gradient(180deg, #4A85C5 0%, #164678 60%, #244F80 100%);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -127,6 +127,16 @@
 }
 
 /* ========== RESPONSIVO ========== */
+/* ===== TABLET PEQUENA (481px+) ===== */
+@media (min-width: 481px) { 
+  .game-header-stats.mobile-visible {
+    justify-content: center;
+  }
+
+  .score, .progress {
+    font-size: 1.2rem;
+  }
+}
 /* TABLET - TODOS OS ELEMENTOS EM UMA LINHA */
 @media (min-width: 768px) {
 
@@ -195,6 +205,10 @@
     gap: 40px;
     margin-top: 30px;
     width: 75vw;
+  }
+
+  .score, .progress {
+    font-size: 1.5em;
   }
 }
 

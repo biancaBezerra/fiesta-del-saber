@@ -29,7 +29,8 @@ h1 {
   line-height: 1.0;
   letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow: 3px 3px 0px white;
+  /* text-shadow: 3px 3px 0px white; */
+  text-shadow: 3px 3px 0px #2c1c31;
   text-align: start;
 }
 
@@ -40,7 +41,8 @@ h2 {
   line-height: 1.0;
   letter-spacing: 4px;
   text-transform: uppercase;
-  text-shadow: 3px 3px 0px white;
+  /* text-shadow: 3px 3px 0px white; */
+  text-shadow: 3px 3px 0px #2c1c31;
   text-align: start;
 }
 
@@ -162,30 +164,129 @@ h2 {
   position: relative;
 }
 
+/* Garantir que containers não ultrapassem limites */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.levels-path {
+  max-width: 600px;
+}
+
+.islands-grid {
+  max-width: 800px;
+}
+
+/* ===== GARANTIR QUE CADA TELA TENHA SEU PRÓPRIO BACKGROUND ===== */
+/* MOBILE FIRST - DEFAULT */
+@media (max-width: 1023px) {
+  #start-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-inicial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Temas */
+  #islands-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Níveis */
+  #level-screen {
+    background-image: url("../assets/components/bg-mobile-niveis.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Informações */
+  #info-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Créditos */
+  #credits-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Jogo */
+  #game-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* DESKTOP - DEFAULT */
+@media (min-width: 1024px) {
+  #start-screen {
+    background-image: url("../assets/components/bg-desktop-inicial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Temas */
+  #islands-screen {
+    background-image: url("../assets/components/bg-desktop-temas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Níveis */
+  #level-screen {
+    background-image: url("../assets/components/bg-desktop-niveis2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Informações */
+  #info-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Créditos */
+  #credits-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Jogo */
+  #game-screen {
+    background-image: url("../assets/components/bg-desktop-jogo2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 /* ===== TABLETS E DESKTOP (3 COLUNAS) ===== */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   body {
     font-size: 16px;
   }
 
-  #islands-screen {
-    background-image: url("../assets/components/bg-ilhas-mobile-tablet.png") !important;
-  }
-
   #level-screen {
-    background-image: url("../assets/components/bg-niveis-numbers-tablet-mobile.png") !important;
-  }
-
-  #info-screen {
-    background-image: url("../assets/components/bg-ilhas-mobile-tablet.png") !important;
-  }
-
-  #credits-screen {
-    background-image: url("../assets/components/bg-ilhas-mobile-tablet.png") !important;
-  }
-
-  #game-screen {
-    background-image: url("../assets/components/bg-jogo-mobile-tablet.png") !important;
+    background-image: url("../assets/components/bg-tablet-niveis.png") !important;
   }
 
   .screen {
@@ -225,7 +326,7 @@ h2 {
   }
 
   h2 {
-    font-size: 2.3em;
+    font-size: 2.5em;
     margin-top: 90px;
     margin-bottom: 50px;
   }
@@ -235,26 +336,6 @@ h2 {
 @media (min-width: 1024px) {
   body {
     font-size: 15px;
-  }
-
-  #islands-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #level-screen {
-    background-image: url("../assets/components/bg-niveis-numbers-desktop.png") !important;
-  }
-
-  #info-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #credits-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #game-screen {
-    background-image: url("../assets/components/bg-jogo-desktop.png") !important;
   }
 
   .screen {
@@ -293,26 +374,6 @@ h2 {
     font-size: 15px;
   }
 
-  #islands-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #level-screen {
-    background-image: url("../assets/components/bg-niveis-numbers-desktop.png") !important;
-  }
-
-  #info-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #credits-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
-  }
-
-  #game-screen {
-    background-image: url("../assets/components/bg-jogo-desktop.png") !important;
-  }
-
   #themes-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
@@ -349,196 +410,136 @@ h2 {
     margin-bottom: 5px;
   }
 
+  #start-screen {
+  background-image: url("../assets/components/bg-desktop-inicial.png");
+  }
+
   #islands-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
+    background-image: url("../assets/components/bg-desktop-temas.png");
   }
 
   #level-screen {
-    background-image: url("../assets/components/bg-niveis-numbers-desktop.png") !important;
+    background-image: url("../assets/components/bg-desktop-niveis2.png");
   }
 
   #info-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
+    background-image: url("../assets/components/bg-desktop-jogo.png");
   }
 
   #credits-screen {
-    background-image: url("../assets/components/bg-ilhas-desktop.png") !important;
+    background-image: url("../assets/components/bg-desktop-jogo.png");
   }
 
   #game-screen {
-    background-image: url("../assets/components/bg-jogo-desktop.png") !important;
+    background-image: url("../assets/components/bg-desktop-jogo2.png");
   }
-
 }
 
-
-/* Garantir que containers não ultrapassem limites */
-.app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.levels-path {
-  max-width: 600px;
-}
-
-.islands-grid {
-  max-width: 800px;
-}
-
-/* ===== GARANTIR QUE CADA TELA TENHA SEU PRÓPRIO BACKGROUND ===== */
-/* Tela Inicial */
-#start-screen {
-  background-image: url("../assets/components/bg-tela-inicial-desktop.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Tela de Temas */
-#islands-screen {
-  background-image: url("../assets/components/bg-ilhas-mobile-tablet.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Tela de Níveis */
-#level-screen {
-  background-image: url("../assets/components/bg-niveis-numbers-tablet-mobile.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Tela de Informações */
-#info-screen {
-  background-image: url("../assets/components/bg-ilhas-mobile-tablet.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Tela de Créditos */
-#credits-screen {
-  background-image: url("../assets/components/bg-ilhas-mobile-tablet.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Tela de Jogo */
-#game-screen {
-  background-image: url("../assets/components/bg-jogo-mobile-tablet.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
+/* ===== TEXTO RAINBOW ===== */
 .rainbow-text {
   display: inline-block;
 }
 
 .rainbow-text span:nth-child(1) {
-  color: #a84dcf;
-}
-
-.rainbow-text span:nth-child(2) {
   color: #ffcc33;
 }
 
+.rainbow-text span:nth-child(2) {
+  color: #357cbe;
+}
+
 .rainbow-text span:nth-child(3) {
-  color: #5cd65c;
+  color: #dd499f;
 }
 
 .rainbow-text span:nth-child(4) {
-  color: #4db8ff;
+  color: #179489;
 }
 
 .rainbow-text span:nth-child(5) {
-  color: #ff6666;
+  color: #e25821;
 }
 
 .rainbow-text span:nth-child(6) {
-  color: #ff9933;
+  color: #a3328b;
 }
 
 .rainbow-text span:nth-child(7) {
-  color: #5cd65c;
+  color: #ffcc33;
 }
 
 .rainbow-text span:nth-child(8) {
-  color: #ff3333;
+  color: #357cbe;
 }
 
 .rainbow-text span:nth-child(9) {
-  color: #33ccff;
+  color: #df1661;
 }
 
 .rainbow-text span:nth-child(10) {
-  color: #ff9966;
+  color: #509a41;
 }
 
 .rainbow-text span:nth-child(11) {
-  color: #ffcc00;
+  color: #f3783c;
 }
 
 .rainbow-text span:nth-child(12) {
-  color: #99cc33;
+  color: #a3328b;
 }
 
 .rainbow-text span:nth-child(13) {
-  color: #ff6666;
+  color: #ffcc33;
 }
 
 .rainbow-text span:nth-child(14) {
-  color: #cc66ff;
+  color: #357cbe;
 }
 
 .rainbow-text span:nth-child(15) {
-  color: #ff6633;
+  color: #df1661;
 }
 
 .rainbow-text span:nth-child(16) {
-  color: #ff3333;
+  color: #509a41;
 }
 
 .rainbow-text span:nth-child(17) {
-  color: #ff9933;
+  color: #f3783c;
 }
 
 .rainbow-text span:nth-child(18) {
-  color: #ff6699;
+  color: #179489;
 }
 
 .rainbow-text span:nth-child(19) {
-  color: #ff3333;
+  color: #dd499f;
 }
 
 .rainbow-text span:nth-child(20) {
-  color: #33ccff;
+  color: #509a41;
 }
 
 .rainbow-text span:nth-child(21) {
-  color: #ff9966;
+  color: #d92333;
 }
 
 .rainbow-text span:nth-child(22) {
-  color: #ffcc00;
+  color: #a3328b;
 }
 
 .rainbow-text span:nth-child(23) {
-  color: #99cc33;
+  color: #ffcc33;
 }
 
 .rainbow-text span:nth-child(24) {
-  color: #ff6666;
+  color: #357cbe;
 }
 
 .rainbow-text span:nth-child(25) {
-  color: #cc66ff;
+  color: #df1661;
 }
 
 .rainbow-text span:nth-child(26) {
-  color: #5cd65c;
+  color: #509a41;
 }

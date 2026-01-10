@@ -6,20 +6,20 @@
 }
 
 .rainbow-text.informacoes {
-  font-size: 2.3em;
+  font-size: 2.5em;
   text-align: center;
-  margin: 8vh 0 3vh;
+  margin: 12vh 0 8vh;
 }
 
 .girl {
   position: absolute;
   width: 150px;
   height: 130px;
-  background: url("/assets/components/menina1.png") no-repeat center center;
+  background: url("/assets/components/menino2.png") no-repeat center center;
   background-size: contain;
-  left: 14%;
   transform: translateX(-50%);
-  top: -8vh;
+  top: -12.5vh;
+  left: 17%;
   z-index: 1000;
 }
 
@@ -34,10 +34,10 @@
   margin: 5vh 0 6vh;
   position: relative;
   box-shadow:
-    0 0 15px rgba(0, 240, 255, 0.9),
-    0 0 40px rgba(0, 255, 255, 0.6),
-    inset 0 0 15px rgba(255, 255, 255, 0.7);
-  border: 10px solid rgba(0, 245, 255, 0.5);
+    0 0 15px rgba(255, 238, 0, 0.6),
+    0 0 40px rgba(255, 238, 0, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  border: 10px solid rgba(253, 238, 21, 0.4);
   background-clip: padding-box;
 }
 
@@ -48,8 +48,8 @@
   border-radius: 28px;
   z-index: -1;
   box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.8),
-    0 0 60px rgba(0, 255, 255, 0.45);
+    0 0 25px rgba(255, 238, 0, 0.6),
+    0 0 60px rgba(255, 238, 0, 0.45);
   filter: blur(8px);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .info-section h3 {
-  color: #ff6666;
+  color: #357cbe;
   margin-bottom: 12px;
   font-size: 1.1rem;
 }
@@ -70,7 +70,7 @@
 }
 
 .skill-card strong {
-  color: #cb67ff;
+  color: #a3328b;
   font-size: 1rem;
 }
 
@@ -114,23 +114,23 @@ p {
 }
 
 .code-link {
-  color: #33ccff;
+  color: #ffcc33;
   cursor: pointer;
   text-decoration: none;
   margin-right: 10px;
   font-weight: bold;
   transition: color 0.3s ease;
-  border: solid #33ccff 2px;
+  border: solid #ffcc33 2px;
   border-radius: 8px;
   padding: 5px;
   font-size: 0.95em;
-  background: #e5ffff;
+  background: #fffde5;
 }
 
 .code-link:hover {
-  color: #00b2df;
+  color: #ffb514;
   text-decoration: none;
-  border-color: #00b2df;
+  border-color: #f3a600;
 }
 
 .demo-item video {
@@ -176,14 +176,14 @@ p {
   justify-content: flex-start;
   align-items: start;
   box-shadow:
-    0 0 15px rgba(0, 240, 255, 0.8),
-    0 0 30px rgba(0, 255, 255, 0.5),
+    0 0 15px rgba(255, 238, 0, 0.6),
+    0 0 30px rgba(255, 238, 0, 0.4),
     inset 0 0 15px rgba(255, 255, 255, 0.8);
-  border: 8px solid rgba(0, 240, 255, 0.5);
+  border: 8px solid rgba(253, 238, 21, 0.4);
   background-clip: padding-box;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 245, 255, 0.7) rgba(255, 255, 255, 0);
+  scrollbar-color: rgba(255, 238, 0, 0.7) rgba(255, 255, 255, 0);
   /* Reset completo das margens */
   margin: 0 !important;
 }
@@ -195,8 +195,8 @@ p {
   border-radius: 28px;
   z-index: -1;
   box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.8),
-    0 0 60px rgba(0, 255, 255, 0.45);
+    0 0 25px rgba(255, 238, 0, 0.3),
+    0 0 60px rgba(255, 238, 0, 0.2);
   filter: blur(8px);
 }
 
@@ -210,11 +210,26 @@ p {
   align-items: flex-start;
 }
 
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-width: 360px) and (max-height: 700px) {
+  .rainbow-text.informacoes {
+    font-size: 2.2em;
+    margin-top: 90px;
+    margin-bottom: 50px;
+  }
+  .girl {
+    top: -6.5em;
+    left: 16%;
+  }
+}
+
 /* ===== 481px+ ===== */
 @media (min-width: 481px) {
   .girl {
-    width: 90px;
-    height: 100px;
+    width: 130px;
+    height: 140px;
+    top: -7em;
+    left: 14%;
   }
 
   .info-content {
@@ -229,7 +244,8 @@ p {
   }
 
   .rainbow-text.informacoes {
-    font-size: 2em;
+    font-size: 2.8em;
+    margin-bottom: 50px;
   }
 }
 
@@ -248,8 +264,8 @@ p {
   .girl {
     width: 250px;
     height: 200px;
-    top: -8em;
-    left: 10%;
+    top: -8.5em;
+    left: 12%;
   }
 
   .info-content {
@@ -307,7 +323,7 @@ p {
     max-width: 650px;
     padding: 35px;
     /* max-height: 70vh; */
-    border: 15px solid rgba(0, 240, 255, 0.5);
+    border: 15px solid rgba(255, 238, 0, 0.5);
     margin: 0 !important;
   }
 
@@ -321,7 +337,7 @@ p {
   }
 
   .rainbow-text.informacoes {
-    font-size: 2.7em;
+    font-size: 3.2em;
     margin-top: 900px;
     margin-bottom: 50px;
   }
@@ -329,8 +345,8 @@ p {
   .girl {
     width: 220px;
     height: 180px;
-    top: -6.5em;
-    left: 6%;
+    top: -8.5em;
+    left: 8%;
   }
 
   .info-content {
@@ -391,7 +407,7 @@ p {
     max-width: 800px;
     /* max-height: 80vh; */
     padding: 30px;
-    border: 10px solid rgba(0, 240, 255, 0.5);
+    border: 10px solid rgba(255, 238, 0, 0.4);
     margin: 0 !important;
   }
 }
@@ -399,15 +415,15 @@ p {
 /* ===== 1600px+ ===== */
 @media (min-width: 1600px) {
   .rainbow-text.informacoes {
-    font-size: 3.5em;
-    margin-top: 900px;
-    margin-bottom: 80px;
+    font-size: 4.5em;
+    margin-top: 170vh;
+    margin-bottom: 120px;
   }
 
   .girl {
     width: 300px;
     height: 250px;
-    top: -8em;
+    top: -12em;
     left: 8%;
   }
 
@@ -470,7 +486,7 @@ p {
     max-width: 1200px;
     /* max-height: 85vh; */
     padding: 50px;
-    border: 12px solid rgba(0, 240, 255, 0.5);
+    border: 12px solid rgba(255, 238, 0, 0.5);
     margin: 0 !important;
   }
 }
@@ -489,8 +505,8 @@ p {
   }
 
   .girl {
-    width: 150px;
-    height: 130px;
+    width: 140px;
+    height: 120px;
     top: -6em;
     left: 7%;
     transform: translateX(-50%);

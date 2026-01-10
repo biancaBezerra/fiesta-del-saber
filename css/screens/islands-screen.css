@@ -34,9 +34,9 @@ h2.rainbow-text.islands-screen-title {
   text-align: center;
 }
 
-.island-card:hover {
+/* .island-card:hover {
   transform: translateY(-3px);
-}
+} */
 
 .island-card::before {
   content: '';
@@ -60,6 +60,30 @@ h2.rainbow-text.islands-screen-title {
   width: 100%;
   height: auto;
   object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+  transition: 
+    transform 0.7s ease-out,
+    filter 0.5s ease;
+}
+
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.island-card:hover .island-image {
+  animation-play-state: paused;
+  transform: translateY(-20px);
+  filter: brightness(1.08);
+}
+
+.island-card:not(:hover) .island-image {
+  animation-play-state: running;
 }
 
 .island-info {
@@ -118,7 +142,7 @@ h2.rainbow-text.islands-screen-title {
 .island-percentage {
   font-size: 0.8em;
   font-weight: 600;
-  color: #2c3e50;
+  color: #fff;
   min-width: 35px;
   text-align: center;
 }
@@ -168,15 +192,16 @@ h2.rainbow-text.islands-screen-title {
   }
 
   h2.rainbow-text.islands-screen-title {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-size: 2.5em;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 3.4em;
   }
 
   .islands-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 18px;
     padding: 18px;
+    margin-top: 20px;
   }
 
   .island-card {
@@ -212,9 +237,10 @@ h2.rainbow-text.islands-screen-title {
 
   .islands-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 80px;
+    padding: 10px;
     max-width: 800px;
+    margin-top: 150px;
   }
 
   .island-card {
@@ -250,7 +276,7 @@ h2.rainbow-text.islands-screen-title {
   }
 
   .island-image {
-    width: 350px;
+    width: 300px;
   }
 }
 
@@ -259,19 +285,24 @@ h2.rainbow-text.islands-screen-title {
   h2.rainbow-text.islands-screen-title {
     margin-top: 50px;
     margin-bottom: 40px;
-    font-size: 3em;
+    font-size: 3.8em;
   }
 
   .islands-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+    gap: 350px;
     padding: 25px;
-    max-width: 800px;
+    max-width: 1200px;
+  }
+
+  .island-image {
+    width: 250px;
   }
 
   .island-card {
     min-height: 200px;
     border-radius: 15px;
+    margin-top: -150px;
   }
 
   .island-icon {
@@ -280,12 +311,13 @@ h2.rainbow-text.islands-screen-title {
   }
 
   .island-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .island-card p,
-  .island-stats {
-    font-size: 1rem;
+  .island-stats,
+  .island-percentage {
+    font-size: 0.9rem;
   }
 
   .image-island {
@@ -296,19 +328,23 @@ h2.rainbow-text.islands-screen-title {
 /* Desktop grande (1600px+) */
 @media (min-width: 1600px) {
   h2.rainbow-text.islands-screen-title {
-    margin-top: 150px;
-    margin-bottom: 80px;
-    font-size: 4em;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-size: 4.5em;
   }
 
   .islands-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 550px;
     max-width: 1200px;
   }
 
+  .island-image {
+    width: 320px;
+  }
+
   .island-card {
-    min-height: 220px;
+    min-height: 250px;
   }
 
   .island-icon {
@@ -316,12 +352,12 @@ h2.rainbow-text.islands-screen-title {
   }
 
   .island-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .island-card p,
   .island-stats {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .image-island {
@@ -336,19 +372,20 @@ h2.rainbow-text.islands-screen-title {
   }
 
   h2.rainbow-text.islands-screen-title {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
     font-size: 2.2em;
   }
 
   .islands-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 180px;
     padding: 10px;
   }
 
   .island-card {
     min-height: 120px;
+    margin-top: -50px;
   }
 
   .island-icon {
@@ -361,16 +398,20 @@ h2.rainbow-text.islands-screen-title {
   }
 
   .island-card h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 4px;
   }
 
   .island-card p,
   .island-stats {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .island-image {
-    width: 180px;
+    width: 150px;
+  }
+
+  .island-levels {
+    margin-top: 2px;
   }
 }

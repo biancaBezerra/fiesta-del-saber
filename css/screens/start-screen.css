@@ -21,7 +21,7 @@ h1.rainbow-text.game-title {
   font-size: 2.5rem;
   color: #fff;
   text-align: center;
-  margin: -1vh 0 3vh;
+  margin: 2vh 0 3vh;
 }
 
 .menu {
@@ -42,7 +42,7 @@ h1.rainbow-text.game-title {
   max-width: 200px;
   padding: 0 15px;
   width: 70%;
-  height: 54vh;
+  height: 56vh;
   gap: 10px;
 }
 
@@ -67,9 +67,9 @@ h1.rainbow-text.game-title {
   }
 
   h1.rainbow-text.game-title {
-    font-size: 2rem;
-    margin-top: -20px;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   .menu {
@@ -79,7 +79,7 @@ h1.rainbow-text.game-title {
 
   .menu-info {
     gap: 15px;
-    height: 52vh;
+    height: 54vh;
     margin-top: 10px;
   }
 
@@ -93,11 +93,13 @@ h1.rainbow-text.game-title {
 
 @media (min-width: 481px) and (orientation: portrait){
   h1.rainbow-text.game-title {
-    font-size: 2.5em;
+    font-size: 3.2em;
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
 
   .menu-info {
-    height: 60vh;
+    height: 54vh;
   }
 
   .menu-info button {
@@ -110,11 +112,12 @@ h1.rainbow-text.game-title {
 /* Media Queries para telas maiores */
 @media screen and (min-width: 768px) {
   .header {
-    height: 24%;
+    height: 20%;
   }
 
   h1.rainbow-text.game-title {
-    font-size: 3.5em;
+    font-size: 4em;
+    margin-top: 15px;
   }
 
   .menu {
@@ -124,7 +127,7 @@ h1.rainbow-text.game-title {
 
   .menu-info {
     max-width: 300px;
-    height: 58vh;
+    height: 64vh;
     gap: 80px;
   }
 
@@ -142,8 +145,8 @@ h1.rainbow-text.game-title {
   }
 
   h1.rainbow-text.game-title {
-    font-size: 2.8em;
-    margin-top: -50px;
+    font-size: 3.8em;
+    margin-top: -20px;
   }
 
   .menu {
@@ -155,7 +158,7 @@ h1.rainbow-text.game-title {
     max-width: 750px;
     padding: 0 15px;
     width: 100%;
-    gap: 60px;
+    gap: 270px;
     height: 52vh;
   }
 
@@ -178,8 +181,8 @@ h1.rainbow-text.game-title {
   }
 
   h1.rainbow-text.game-title {
-    font-size: 3.2em;
-    margin-top: 20px;
+    font-size: 4.8em;
+    margin-top:-10px;
   }
 
   .menu {
@@ -190,7 +193,7 @@ h1.rainbow-text.game-title {
     max-width: 350px;
     width: 70%;
     height: 54vh;
-    gap: 60px;
+    gap: 380px;
   }
 
   .menu-info button {
@@ -204,13 +207,14 @@ h1.rainbow-text.game-title {
 /* Ajustes para orientação landscape em mobile */
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .header {
-    height: 1%;
-    padding-top: 0px;
+    height: auto;
+    padding-top: 0;
+    margin-top: -40px;
   }
 
   h1.rainbow-text.game-title {
-    font-size: 2em;
-    margin-top: -40px;
+    font-size: 2.5em;
+    margin: 0;
   }
 
   #start-screen {
@@ -222,14 +226,18 @@ h1.rainbow-text.game-title {
   .menu {
     max-width: 290px;
     gap: 10px;
-    margin-top: 75px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
 
   .menu-info {
     max-width: 250px;
-    height: 50%;
-    gap: 30px;
+    height: 45%;
+    gap: 120px;
     margin-top: 15px;
+  }
+
+  .menu-info button {
+    height: 35px;
   }
 }
