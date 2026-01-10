@@ -289,6 +289,10 @@ h2 {
     background-image: url("../assets/components/bg-tablet-niveis.png") !important;
   }
 
+  #islands-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-temas.png") !important;
+  }
+
   .screen {
     padding: 20px;
     justify-content: flex-start;
