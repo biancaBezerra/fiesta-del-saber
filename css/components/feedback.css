@@ -29,16 +29,21 @@
 }
 
 .feedback-correct {
-  background: linear-gradient(135deg, #58cc02 0%, #58a700 100%);
+  /* background: linear-gradient(135deg, #58cc02 0%, #58a700 100%);
   color: white;
-  border-color: #46a302;
+  border-color: #46a302; */
+  background: linear-gradient(135deg, #127c5c 0%, #205c45 100%);
+  border-color: #007a52;
+  color: white;
   box-shadow: 0 8px 25px rgba(88, 204, 2, 0.3);
 }
 
 .feedback-incorrect {
-  background: linear-gradient(135deg, #ff4b4b 0%, #e04444 100%);
   color: white;
-  border-color: #d93636;
+  background: linear-gradient(135deg, #9b4848 0%, #a14242 100%);
+  border-color: #9c3434;
+  /* background: linear-gradient(135deg, #cf5b5b 0%, #b54646 100%);
+  border-color: #a83d3d; */
   box-shadow: 0 8px 25px rgba(255, 75, 75, 0.3);
 }
 
@@ -50,16 +55,18 @@
 }
 
 .feedback-success {
-  background: linear-gradient(135deg, #58cc02 0%, #58a700 100%);
   color: white;
-  border-color: #46a302;
+  background: linear-gradient(135deg, #127c5c 0%, #205c45 100%);
+  border-color: #007a52;
   box-shadow: 0 8px 25px rgba(88, 204, 2, 0.3);
 }
 
 .feedback-error {
-  background: linear-gradient(135deg, #ff4b4b 0%, #e04444 100%);
   color: white;
-  border-color: #d93636;
+  /* background: linear-gradient(135deg, #d96464 0%, #ad3f3f 100%);
+  border-color: #9c3434; */
+  background: linear-gradient(135deg, #9b4848 0%, #a14242 100%);
+  border-color: #9c3434;
   box-shadow: 0 8px 25px rgba(255, 75, 75, 0.3);
 }
 
