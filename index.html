@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>LinguaQuest - Aprenda Idiomas</title>
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- CSS das Telas -->
+    <link rel="stylesheet" href="css/screens/start-screen.css" />
+    <link rel="stylesheet" href="css/screens/theme-screen.css" />
+    <link rel="stylesheet" href="css/screens/game-screen.css" />
+    <link rel="stylesheet" href="css/screens/info-screen.css" />
+    <link rel="stylesheet" href="css/screens/credits-screen.css" />
+    <link rel="stylesheet" href="css/screens/islands-screen.css" />
+
+    <!-- CSS dos Componentes -->
+    <link rel="stylesheet" href="css/components/buttons.css" />
+    <link rel="stylesheet" href="css/components/modals.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/animations.css" />
+    <link rel="stylesheet" href="css/components/feedback.css" />
+    <link rel="stylesheet" href="css/components/feedback.css" />
+    <link rel="stylesheet" href="css/components/exercises/picture-match.css" />
+    <link
+      rel="stylesheet"
+      href="css/components/exercises/emoji-translation.css"
+    />
+    <link rel="stylesheet" href="css/components/exercises/fill-blank.css" />
+    <link
+      rel="stylesheet"
+      href="css/components/exercises/multiple-choice.css"
+    />
+    <link rel="stylesheet" href="css/components/exercises/translation.css" />
+    <link rel="stylesheet" href="css/components/exercises/word-match.css" />
+    <link rel="stylesheet" href="css/components/exercises/word-order.css" />
+    <link rel="stylesheet" href="css/components/exercises/listening.css" />
+    <link
+      rel="stylesheet"
+      href="css/components/exercises/timed-challenge.css"
+    />
+  </head>
+
+  <body>
+    <div id="game-container">
+      <!-- Tela Inicial -->
+      <div id="start-screen" class="screen active">
+        <div class="header">
+          <button class="global-mute-btn">
+            <span class="mute-icon">🔊</span>
+          </button>
+          <h1 class="rainbow-text game-title">
+            <span>F</span><span>I</span><span>E</span><span>S</span
+            ><span>T</span><span>A</span> <span>D</span><span>E</span
+            ><span>L</span> <span>S</span><span>A</span><span>B</span><span>E</span
+            ><span>R</span>
+          </h1>
+          <div class="character"></div>
+        </div>
+        <div class="menu">
+          <button class="btn-primary" data-action="show-islands-screen">
+            Jogar
+          </button>
+        </div>
+        <div class="menu-info">
+          <button class="btn-secondary" data-action="show-info-screen">
+            Informações
+          </button>
+          <button class="btn-secondary" data-action="show-credits-screen">
+            Créditos
+          </button>
+        </div>
+      </div>
+
+      <!-- === NOVA TELA: ILHAS === -->
+      <div id="islands-screen" class="screen">
+        <div class="screen-header">
+          <!-- VOLTAR para start-screen -->
+          <button class="btn-back-header" data-action="show-start-screen">
+            Voltar
+          </button>
+          <button class="btn-info-header" data-action="show-info-modal">
+            i
+          </button>
+          <button class="global-mute-btn">
+            <span class="mute-icon">🔊</span>
+          </button>
+        </div>
+        <h2 class="rainbow-text islands-screen-title">
+          <span>E</span><span>L</span><span>I</span><span>G</span><span>E</span
+          > <span>T</span><span>U</span> <span>A</span><span>V</span
+          ><span>E</span><span>N</span><span>T</span><span>U</span
+          ><span>R</span><span>A</span>
+        </h2>
+
+        <div class="islands-grid">
+          <!-- ILHA 1: LETRAS -->
+          <!-- <div class="island-card" data-island="letters">
+            <div class="island-icon">📚</div>
+            <h3>Ilha das Letras</h3>
+            <p>Alfabeto, palavras e escrita</p>
+          </div> -->
+
+          <!-- ILHA 2: NÚMEROS -->
+          <div class="island-card" data-island="numbers">
+            <img
+              class="island-image"
+              src="assets/components/img-nivel1.png"
+              alt="La Casa de los Números"
+            />
+            <div class="island-info">
+              <h3>La Casa de los Números</h3>
+              <p class="island-progress-text">Carregando progresso...</p>
+              <div class="island-levels">
+                <div class="island-progress-bar">
+                  <div class="island-progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="island-percentage">0%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ILHA 3: COMIDAS -->
+          <!-- <div class="island-card" data-island="foods">
+            <div class="island-icon"></div>
+            <h3>Ilha das Comidas</h3>
+            <p>Alimentos e culinária</p>
+          </div> -->
+
+          <!-- ILHA 4: VERBOS -->
+          <div class="island-card" data-island="verbs">
+            <img
+              class="island-image"
+              src="assets/components/img-nivel2.png"
+              alt="La Casa de las Palabras"
+            />
+            <div class="island-info">
+              <h3>La Casa de las Palabras</h3>
+              <p class="island-progress-text">Carregando progresso...</p>
+              <div class="island-levels">
+                <div class="island-progress-bar">
+                  <div class="island-progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="island-percentage">0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tela de Seleção de Níveis -->
+      <section id="level-screen" class="screen">
+        <div class="screen-header">
+          <!-- TELAS DE NÍVEL: Som + Voltar -->
+          <button class="btn-back-header" data-action="show-islands-screen">
+            Voltar
+          </button>
+          <button class="btn-info-header" data-action="show-info-modal">
+            i
+          </button>
+          <button class="global-mute-btn">
+            <span class="mute-icon">🔊</span>
+          </button>
+        </div>
+        <h2 class="rainbow-text level-screen-title">
+          <span>S</span><span>E</span><span>L</span><span>E</span><span>C</span
+          ><span>C</span><span></span><span>I</span><span>O</span><span>N</span><span>E</span> <span>T</span><span>U</span> <span>N</span><span>I</span><span>V</span><span>E</span><span>L</span>
+        </h2>
+        <p class="current-theme-info"><span id="current-theme-name"></span></p>
+        <img id="level-image" src="" alt="" />
+        <div class="levels-grid" id="levels-grid">
+          <!-- Os cards de nível serão inseridos dinamicamente pelo JavaScript -->
+        </div>
+      </section>
+
+      <!-- Tela de Jogo -->
+      <div id="game-screen" class="screen">
+        <!-- HEADER UNIFICADO PARA TODOS OS DISPOSITIVOS -->
+        <div class="game-header-unified">
+          <div class="header-left">
+            <button class="btn-back-unified" data-action="show-level-screen">
+              Voltar
+            </button>
+          </div>
+          <div class="header-right">
+            <button class="btn-info-unified" data-action="show-info-modal">
+              i
+            </button>
+            <!-- TELA DE JOGO: Todos os botões -->
+            <button class="btn-help-unified" data-action="show-help">?</button>
+            <button class="btn-pause-unified" data-action="pause-game">
+              ||
+            </button>
+            <button class="global-mute-btn">
+              <span class="mute-icon">🔊</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- MOBILE: Stats abaixo do header -->
+        <div class="game-header-stats mobile-visible">
+          <div class="score">
+            ⭐ Acertos: <span id="score">0</span>/<span id="total-pairs"
+              >0</span
+            >
+          </div>
+          <div class="progress">
+            📊 Progresso: <span id="progress">0%</span>
+          </div>
+        </div>
+
+        <!-- DESKTOP: Stats abaixo do header -->
+        <div class="game-header-stats desktop-visible">
+          <div class="score">
+            ⭐ Acertos: <span id="score">0</span>/<span id="total-pairs"
+              >0</span
+            >
+          </div>
+          <div class="progress">
+            📊 Progresso: <span id="progress">0%</span>
+          </div>
+        </div>
+
+        <div id="app-container" class="app-container">
+          <!-- Os exercícios serão renderizados aqui -->
+        </div>
+      </div>
+
+      <!-- Tela de Informações -->
+      <div id="info-screen" class="screen">
+        <div class="screen-header">
+          <!-- TELAS INFO: Som + Voltar -->
+          <button class="btn-back-header" data-action="back-from-info">
+            Voltar
+          </button>
+          <button class="global-mute-btn">
+            <span class="mute-icon">🔊</span>
+          </button>
+        </div>
+        <!-- <h2 class="informacoes">Informações Educacionais</h2> -->
+        <h2 class="rainbow-text informacoes">
+          <span>I</span><span>N</span><span>F</span><span>O</span><span>R</span
+          ><span>M</span><span>A</span><span>Ç</span><span>Õ</span><span>E</span
+          ><span>S</span>
+          <span> </span>
+          <span>E</span><span>D</span><span>U</span><span>C</span><span>A</span
+          ><span>C</span><span>I</span><span>O</span><span>N</span><span>A</span
+          ><span>I</span><span>S</span>
+          <span> </span>
+        </h2>
+        <div class="info-content">
+          <div class="girl"></div>
+          <div class="info-section">
+            <h3>Habilidades da BNCC trabalhadas</h3>
+            <div class="skill-card">
+              <h4>Educação Infantil / Anos Iniciais</h4>
+              <p class="skill-codes">
+                <span
+                  class="code-link"
+                  data-code="EI03TS01"
+                  data-action="show-skill-modal"
+                  >EI03TS01</span
+                >
+                <span
+                  class="code-link"
+                  data-code="EI03EF01"
+                  data-action="show-skill-modal"
+                  >EI03EF01</span
+                >
+              </p>
+              <p>
+                <strong>HABILIDADES:</strong> Percepção visual, reconhecimento
+                de formas e correspondência entre imagens e sombras.
+              </p>
+            </div>
+
+            <div class="skill-card">
+              <h4>Educação Física / Desenvolvimento Psicomotor</h4>
+              <p class="skill-codes">
+                <span
+                  class="code-link"
+                  data-code="EF01EF03"
+                  data-action="show-skill-modal"
+                  >EF01EF03</span
+                >
+              </p>
+              <p>
+                <strong>HABILIDADES:</strong> Coordenação motora fina e
+                interação com tecnologias educacionais.
+              </p>
+            </div>
+
+            <div class="skill-card">
+              <h4>Tecnologia e Computação</h4>
+              <p class="skill-codes">
+                <span
+                  class="code-link"
+                  data-code="EF05MA15"
+                  data-action="show-skill-modal"
+                  >EF05MA15</span
+                >
+                <span
+                  class="code-link"
+                  data-code="PC1EF02"
+                  data-action="show-skill-modal"
+                  >PC1EF02</span
+                >
+              </p>
+              <p>
+                <strong>HABILIDADES:</strong> Pensamento computacional,
+                interação digital e resolução de desafios por arrastar e soltar.
+              </p>
+            </div>
+            <div class="skill-card">
+              <h4>Matemática</h4>
+              <p class="skill-codes">
+                <span
+                  class="code-link"
+                  data-code="EF01MA12"
+                  data-action="show-skill-modal"
+                  >EF01MA12</span
+                >
+                <span
+                  class="code-link"
+                  data-code="EF02MA13"
+                  data-action="show-skill-modal"
+                  >EF02MA13</span
+                >
+              </p>
+              <p>
+                <strong>HABILIDADES:</strong> Raciocínio espacial, geometria e
+                noções de localização e movimento.
+              </p>
+            </div>
+            <div class="skill-card">
+              <h4>Linguagens (Artes Visuais)</h4>
+              <p class="skill-codes">
+                <span
+                  class="code-link"
+                  data-code="EF15AR03"
+                  data-action="show-skill-modal"
+                  >EF15AR03</span
+                >
+              </p>
+              <p>
+                <strong>HABILIDADES:</strong> Reconhecimento de elementos
+                visuais e identificação de cores, formas, contrastes, etc.
+              </p>
+            </div>
+            <h3>Sobre o Jogo</h3>
+            <p>
+              "Mundo das Sombras" é um jogo educativo que estimula o
+              desenvolvimento cognitivo através da associação de objetos com
+              suas sombras.<br />
+              Este jogo auxilia no desenvolvimento de habilidades como
+              raciocínio lógico, orientação espacial e percepção visual, além de
+              favorecer o desenvolvimento cognitivo e linguístico, conforme as
+              categorias de imagens, alinhando-se às competências da Base
+              Nacional Comum Curricular (BNCC).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de Informações (reutiliza o conteúdo) -->
+      <div id="info-modal" class="modal">
+        <div class="modal-content large-modal">
+          <span class="close" data-action="close-info-modal">&times;</span>
+          <div id="modal-info-content" class="info-content">
+            <!-- O conteúdo será copiado dinamicamente do main-info-content -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tela de Créditos -->
+      <div id="credits-screen" class="screen">
+        <div class="screen-header">
+          <!-- TELAS CRÉDITOS: Som + Voltar -->
+          <button class="btn-back-header" data-action="show-start-screen">
+            Voltar
+          </button>
+          <button class="global-mute-btn">
+            <span class="mute-icon">🔊</span>
+          </button>
+        </div>
+        <h2 class="rainbow-text creditos">
+          <span>C</span><span>R</span><span>É</span><span>D</span><span>I</span
+          ><span>T</span><span>O</span><span>S</span>
+        </h2>
+        <div class="credits-content">
+          <div class="credits-girl"></div>
+          <div class="credits-section">
+            <h3>Desenvolvido por</h3>
+            <p>Equipe de Desenvolvimento Educacional.</p>
+          </div>
+          <div class="credits-section">
+            <h3>Conceito Educacional</h3>
+            <p>
+              Baseado em metodologias de aprendizagem lúdica e desenvolvimento
+              cognitivo.
+            </p>
+          </div>
+          <div class="credits-section">
+            <h3>Público-Alvo</h3>
+            <p>Estudantes do Ensino Fundamental I e II (6-14 anos).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Habilidade -->
+    <div id="skill-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-action="close-skill-modal">&times;</span>
+        <h3 class="rainbow-text modal-title">Título da Habilidade</h3>
+        <h4 id="modalSubtitle" class="modal-subtitle">Detalhes da BNCC</h4>
+        <div id="modalContent">
+          <div class="code-details">
+            <p><strong>Unidade Temática:</strong> <span id="unidade"></span></p>
+            <p><strong>Habilidade:</strong> <span id="habilidade"></span></p>
+            <p>
+              <strong>Objeto do Conhecimento:</strong>
+              <span id="conhecimento"></span>
+            </p>
+            <p>
+              <strong>Como é Trabalhada:</strong> <span id="aplicacao"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modais -->
+    <div id="help-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-action="close-help">&times;</span>
+        <h2 class="rainbow-text help-title">
+          <span>💡</span><span>D</span><span>I</span><span>C</span
+          ><span>A</span>
+        </h2>
+        <div class="help-content">
+          <p class="help-text">
+            Assista o vídeo de demonstração para entender como jogar. Cada
+            exercício pode ter regras ligeiramente diferentes.
+          </p>
+          <p class="help-text">
+            Use o botão de pausa para interromper o jogo a qualquer momento.
+          </p>
+        </div>
+
+        <div class="help-demo demo-automated">
+          <div class="demo-item">
+            <video controls width="100%" height="auto">
+              <source src="assets/components/demo.mp4" type="video/mp4" />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pause-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-action="close-pause-modal">&times;</span>
+        <h2 class="rainbow-text pause-title">
+          <span>J</span><span>O</span><span>G</span><span>O</span> <span> </span
+          ><span>P</span><span>A</span><span>U</span><span>S</span><span>A</span
+          ><span>D</span><span>O</span>
+        </h2>
+        <div class="modal-actions">
+          <button class="btn-primary" data-action="resume-game">
+            ▶ Continuar
+          </button>
+          <button class="btn-secondary" data-action="show-level-screen">
+            Voltar aos Níveis
+          </button>
+        </div>
+        <button
+          class="btn-secondary-pause-modal"
+          data-action="show-theme-screen"
+        >
+          Menu Principal
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de Nível Completado -->
+    <div id="level-complete-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-action="close-level-complete">&times;</span>
+        <h2 class="rainbow-text level-complete-title">
+          <span>N</span><span>Í</span><span>V</span><span>E</span><span>L</span
+          ><span> </span><span>C</span><span>O</span><span>N</span><span>C</span
+          ><span>L</span><span>U</span><span>Í</span><span>D</span><span>O</span
+          ><span>!</span>
+        </h2>
+        <p>Você ganhou <span id="stars-earned">5</span> estrelas!</p>
+        <div class="icon-modal">🎉</div>
+
+        <!-- BARRA DE PROGRESSO ESTILOSA -->
+        <div class="stars-progress">
+          <div class="star-badge" id="star-badge">
+            <span class="star-icon-large">⭐</span>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">
+              <div
+                class="progress-fill"
+                id="stars-progress-fill"
+                style="width: 0%"
+              ></div>
+              <div class="progress-text" id="progress-text">0/25 estrelas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-primary" data-action="next-level">
+            Próximo Nível
+          </button>
+          <button class="btn-secondary" data-action="replay-level">
+            Jogar Novamente
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Todos os Níveis Completos -->
+    <div id="all-levels-complete-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-action="close-all-levels-complete"
+          >&times;</span
+        >
+        <h2 class="rainbow-text all-levels-complete-title">
+          <span>T</span><span>O</span><span>D</span><span>O</span><span>S</span
+          ><span> </span><span>O</span><span>S</span><span> </span><span>N</span
+          ><span>Í</span><span>V</span><span>E</span><span>I</span><span>S</span
+          ><span> </span><span>C</span><span>O</span><span>M</span><span>P</span
+          ><span>L</span><span>E</span><span>T</span><span>O</span><span>S</span
+          ><span>!</span>
+        </h2>
+        <div class="icon-modal">🏆</div>
+        <p>
+          Parabéns! Você completou todos os níveis
+          <span id="completed-theme"></span> e coletou
+          <strong>todas as 25 estrelas</strong>! 🎉
+        </p>
+
+        <!-- BARRA DE PROGRESSO COMPLETA -->
+        <div class="stars-progress">
+          <div class="star-badge pulse">
+            <span class="star-icon-large">⭐</span>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar full">
+              <div class="progress-fill" style="width: 100%"></div>
+              <div class="progress-text">25/25 estrelas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-primary" data-action="next-theme">
+            Visitar Ilhas
+          </button>
+          <button class="btn-secondary" data-action="replay-theme">
+            Jogar Novamente
+          </button>
+          <button class="btn-secondary" data-action="show-theme-screen">
+            Menu Principal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elementos de UI -->
+    <div id="feedback-message" class="feedback-message"></div>
+    <div id="position-indicator" class="position-indicator"></div>
+
+    <!-- Scripts -->
+    <!-- Lógica -->
+    <script src="js/core/game/listening-system.js"></script>
+    <script src="js/core/game/picture-match-system.js"></script>
+    <script src="js/core/game/emoji-translation-system.js"></script>
+    <script src="js/core/game/fill-blank-system.js"></script>
+    <script src="js/core/game/multiple-choice-system.js"></script>
+    <script src="js/core/game/translation-system.js"></script>
+    <script src="js/core/game/word-match-system.js"></script>
+    <script src="js/core/game/word-order-system.js"></script>
+    <!-- <script src="js/core/game/timed-challenge-system.js"></script> -->
+
+    <!-- Dados dos Exercícios -->
+    <script src="js/data/exercises/listening.js"></script>
+    <script src="js/data/exercises/emoji-translation.js"></script>
+    <script src="js/data/exercises/translation.js"></script>
+    <script src="js/data/exercises/multiple-choice.js"></script>
+    <script src="js/data/exercises/fill-blank.js"></script>
+    <script src="js/data/exercises/word-match.js"></script>
+    <script src="js/data/exercises/picture-match.js"></script>
+    <script src="js/data/exercises/word-order.js"></script>
+    <!-- <script src="js/data/exercises/timed-challenge.js"></script> -->
+
+    <!-- Sistemas Core -->
+    <script src="js/core/exercise-templates.js"></script>
+    <script src="js/data/islands.js"></script>
+    <script src="js/core/screen-manager.js"></script>
+    <script src="js/core/audio-manager.js"></script>
+    <script src="js/core/game-manager.js"></script>
+    <script src="js/core/informacoes.js"></script>
+
+    <!-- UI Components -->
+    <script src="js/ui/feedback.js"></script>
+    <script src="js/ui/modals.js"></script>
+
+    <!-- Analytics -->
+    <script src="js/analytics/google-sheets-tracker.js"></script>
+
+    <!-- Main -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,381 @@
+.exercise-container.fill-blank {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+}
+
+/* Título do exercício */
+.exercise-container.fill-blank .match-instructions {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-style: normal;
+}
+
+.fill-blank {
+  text-align: center;
+  min-width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fill-blank .sentence {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 20px;
+  background: #f8f9fa;
+  color: #333;
+  font-weight: 500;
+  border-radius: 12px;
+  border: 3px solid #e9ecef;
+  line-height: 1.5;
+  order: 1;
+}
+
+/* Container do input - fica abaixo do texto */
+.input-container {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.blank-input {
+  padding: 1.5vh 3%;
+  font-size: 1.1em;
+  border: 3px solid #dee2e6;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 100%;
+  max-width: 600px;
+  cursor: text;
+  transition: all 0.3s ease;
+  background: white;
+  font-weight: 500;
+}
+
+.blank-input:focus {
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+  outline: none;
+  transform: scale(1.02);
+}
+
+.blank-input.correct {
+  border-color: #007a52;
+  background: #e7fff7fb;
+  color: #007a52;
+}
+
+.blank-input.incorrect {
+  border-color: #a14242;
+  background: #fde4e4;
+  color: #a14242;
+}
+
+/* Hint Section */
+.hint-section {
+  order: 3;
+  margin: 8px 0;
+}
+
+.hint-button {
+  padding: 10px 20px;
+  background: #fff242;
+  border: none;
+  border-radius: 12px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.hint-button:hover {
+  background: #ffd900;
+  transform: translateY(-2px);
+}
+
+.hint-button.hint-active {
+  background: #fff242;
+  color: #333;
+}
+
+.hint-content {
+  margin-top: 12px;
+  padding: 12px;
+  background: #fff7cb;
+  border-radius: 8px;
+  border-left: 4px solid #fff242;
+  animation: fadeIn 0.3s ease;
+}
+
+.hint-content strong {
+  color: #333;
+}
+
+/* Botão verificar */
+.fill-blank .check-button {
+  order: 4;
+  margin-top: 8px;
+}
+
+/* Botão de verificação */
+.exercise-container.fill-blank .check-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, #4A85C5 0%, #1f67b4 60%, #2a64a7 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.exercise-container.fill-blank .check-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE FIRST - AJUSTES PARA TELAS MAIORES */
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-height: 700px) {
+  .exercise-container.fill-blank .match-instructions {
+    font-size: 1.3em;
+  }
+
+  .fill-blank .sentence {
+    padding: 15px;
+  }
+
+  .exercise-container.fill-blank .check-button {
+    padding: 14px;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+/* Tablets pequenos e dispositivos maiores */
+@media (min-width: 481px) {
+  .fill-blank .sentence {
+    font-size: 1.3em;
+    padding: 22px;
+  }
+
+  .blank-input {
+    padding: 14px 22px;
+    font-size: 1.2em;
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media screen and (min-width: 768px) {
+  .exercise-container.fill-blank {
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 18px;
+    width: 100%;
+  }
+
+  .exercise-container.fill-blank .match-instructions {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+
+  .fill-blank {
+    gap: 20px;
+  }
+
+  .fill-blank .sentence {
+    font-size: 1.4em;
+    padding: 25px;
+    border-radius: 14px;
+    line-height: 1.6;
+  }
+
+  .input-container {
+    gap: 15px;
+  }
+
+  .blank-input {
+    padding: 18px 25px;
+    font-size: 1.3em;
+    border-radius: 12px;
+  }
+
+  .blank-input:focus {
+    transform: scale(1.05);
+  }
+
+  .hint-section {
+    margin: 10px 0;
+  }
+
+  .hint-button {
+    padding: 15px 24px;
+    font-size: 1em;
+    border-radius: 15px;
+  }
+
+  .hint-content {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .fill-blank .check-button {
+    margin-top: 10px;
+  }
+
+  .exercise-container.fill-blank .check-button {
+    padding: 22px;
+    font-size: 1.3em;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .exercise-container.fill-blank {
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .exercise-container.fill-blank .match-instructions {
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+
+  .fill-blank .sentence {
+    font-size: 1.3em;
+    padding: 14px;
+  }
+
+  .blank-input {
+    padding: 14px 25px;
+    font-size: 1em;
+    border-radius: 12px;
+  }
+
+  .hint-button {
+    padding: 12px 18px;
+    font-size: 0.85em;
+  }
+
+  .exercise-container.fill-blank .check-button {
+    padding: 16px;
+    font-size: 1.1em;
+    margin-top: 0px;
+  }
+
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .exercise-container.fill-blank {
+    padding: 35px;
+    min-width: 80%;
+  }
+
+  .exercise-container.fill-blank .match-instructions {
+    font-size: 1.7em;
+    margin-top: 15px;
+    margin-bottom: 35px;
+  }
+
+  .fill-blank .sentence {
+    font-size: 1.5em;
+    padding: 22px;
+  }
+
+  .blank-input {
+    padding: 22px 25px;
+    font-size: 1.3em;
+    border-radius: 12px;
+  }
+
+  .hint-button {
+    padding: 18px 24px;
+    font-size: 1.2em;
+    border-radius: 15px;
+  }
+
+  .exercise-container.fill-blank .check-button {
+    padding: 24px;
+    font-size: 1.4em;
+  }
+}
+
+/* Modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .exercise-container.fill-blank {
+    padding: 22px;
+    width: 100%;
+  }
+
+  .exercise-container.fill-blank .match-instructions {
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .fill-blank .sentence {
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 10px;
+  }
+
+  .blank-input {
+    padding: 12px 15px;
+    font-size: 0.85em;
+  }
+
+  .hint-button {
+    padding: 10px 8px;
+    font-size: 0.8em;
+  }
+
+  .exercise-container.fill-blank .check-button {
+    padding: 12px;
+    margin-top: 0px;
+  }
+}

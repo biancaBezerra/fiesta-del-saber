@@ -1,0 +1,152 @@
+.timed-exercise-wrapper {
+  position: relative;
+}
+
+.exercise-timer {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  background: #fff;
+  color: #333;
+  padding: 1vh 2vh;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #007a52;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.exercise-timer.warning {
+  border-color: #ff9800;
+  background: #fff3e0;
+  animation: pulse 1s infinite;
+}
+
+.exercise-timer.danger {
+  border-color: #a14242;
+  background: #ffebee;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Ajustes específicos para cada tipo de exercício com timer */
+.timed-exercise-wrapper .exercise-container {
+  position: relative;
+}
+
+/* Ajuste de padding superior para não sobrepor conteúdo */
+.timed-exercise-wrapper .exercise-container.multiple-choice,
+.timed-exercise-wrapper .exercise-container.fill-blank,
+.timed-exercise-wrapper .exercise-container.word-match,
+.timed-exercise-wrapper .exercise-container.picture-match,
+.timed-exercise-wrapper .exercise-container.translation,
+.timed-exercise-wrapper .exercise-container.emoji-translation,
+.timed-exercise-wrapper .exercise-container.word-order {
+  padding-top: 6vh;
+}
+
+/* MOBILE FIRST - AJUSTES PARA TELAS MAIORES */
+
+/* Tablets pequenos e dispositivos maiores */
+@media (min-width: 481px) {
+  .exercise-timer {
+    top: 12px;
+    right: 0px;
+    padding: 9px 17px;
+    font-size: 15px;
+  }
+
+  .timed-exercise-wrapper .exercise-container.multiple-choice,
+  .timed-exercise-wrapper .exercise-container.fill-blank,
+  .timed-exercise-wrapper .exercise-container.word-match,
+  .timed-exercise-wrapper .exercise-container.picture-match,
+  .timed-exercise-wrapper .exercise-container.translation,
+  .timed-exercise-wrapper .exercise-container.emoji-translation,
+  .timed-exercise-wrapper .exercise-container.word-order {
+    padding-top: 48px;
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media screen and (min-width: 768px) {
+  .exercise-timer {
+    top: 15px;
+    right: 0px;
+    padding: 10px 18px;
+    font-size: 18px;
+  }
+
+  .timed-exercise-wrapper .exercise-container.multiple-choice,
+  .timed-exercise-wrapper .exercise-container.fill-blank,
+  .timed-exercise-wrapper .exercise-container.word-match,
+  .timed-exercise-wrapper .exercise-container.picture-match,
+  .timed-exercise-wrapper .exercise-container.translation,
+  .timed-exercise-wrapper .exercise-container.emoji-translation,
+  .timed-exercise-wrapper .exercise-container.word-order {
+    padding-top: 50px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .exercise-timer {
+    top: 16px;
+    right: 0px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .exercise-timer {
+    padding: 10px 18px;
+    font-size: 1.4em;
+    top: 20px;
+    right: 100px;
+  }
+
+  .timed-exercise-wrapper .exercise-container.multiple-choice,
+  .timed-exercise-wrapper .exercise-container.fill-blank,
+  .timed-exercise-wrapper .exercise-container.word-match,
+  .timed-exercise-wrapper .exercise-container.picture-match,
+  .timed-exercise-wrapper .exercise-container.translation,
+  .timed-exercise-wrapper .exercise-container.emoji-translation,
+  .timed-exercise-wrapper .exercise-container.word-order {
+    padding-top: 70px;
+    min-width: 80%;
+  }
+}
+
+/* Modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .exercise-timer {
+    top: 10px;
+    right: 1px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .timed-exercise-wrapper .exercise-container.multiple-choice,
+  .timed-exercise-wrapper .exercise-container.fill-blank,
+  .timed-exercise-wrapper .exercise-container.word-match,
+  .timed-exercise-wrapper .exercise-container.picture-match,
+  .timed-exercise-wrapper .exercise-container.translation,
+  .timed-exercise-wrapper .exercise-container.emoji-translation,
+  .timed-exercise-wrapper .exercise-container.word-order {
+    padding-top: 35px;
+  }
+}

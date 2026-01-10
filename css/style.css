@@ -1,0 +1,549 @@
+/* ===== ESTILOS BASE (MOBILE FIRST) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Fredoka", "Comic Sans MS", "Chalkboard SE", "Arial Rounded MT Bold",
+    sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  touch-action: none;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 3.2em;
+  text-align: center;
+  line-height: 1.0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  /* text-shadow: 3px 3px 0px white; */
+  text-shadow: 3px 3px 0px #2c1c31;
+  text-align: start;
+}
+
+h2 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 3.2em;
+  text-align: center;
+  line-height: 1.0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  /* text-shadow: 3px 3px 0px white; */
+  text-shadow: 3px 3px 0px #2c1c31;
+  text-align: start;
+}
+
+#game-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1%;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.screen.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* ===== TELA DE TEMAS - MOBILE (2 COLUNAS) ===== */
+#theme-screen {
+  padding: 2% 0;
+}
+
+#themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 0 15px 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.theme-card {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.theme-preview {
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin: 0 auto 1%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  overflow: hidden;
+  position: relative;
+}
+
+.theme-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.theme-card h3 {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.3;
+  padding: 5px 0;
+}
+
+/* ===== TELA DE NÍVEIS - MOBILE (2 COLUNAS) ===== */
+#level-screen {
+  padding: 40px 15px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 15px;
+}
+
+.level-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  position: relative;
+}
+
+/* Garantir que containers não ultrapassem limites */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.levels-path {
+  max-width: 600px;
+}
+
+.islands-grid {
+  max-width: 800px;
+}
+
+/* ===== GARANTIR QUE CADA TELA TENHA SEU PRÓPRIO BACKGROUND ===== */
+/* MOBILE FIRST - DEFAULT */
+@media (max-width: 1023px) {
+  #start-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-inicial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Temas */
+  #islands-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Níveis */
+  #level-screen {
+    background-image: url("../assets/components/bg-mobile-niveis.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Informações */
+  #info-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Créditos */
+  #credits-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Jogo */
+  #game-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* DESKTOP - DEFAULT */
+@media (min-width: 1024px) {
+  #start-screen {
+    background-image: url("../assets/components/bg-desktop-inicial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Temas */
+  #islands-screen {
+    background-image: url("../assets/components/bg-desktop-temas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Níveis */
+  #level-screen {
+    background-image: url("../assets/components/bg-desktop-niveis2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Informações */
+  #info-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Créditos */
+  #credits-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Tela de Jogo */
+  #game-screen {
+    background-image: url("../assets/components/bg-desktop-jogo2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+/* ===== TABLETS E DESKTOP (3 COLUNAS) ===== */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  body {
+    font-size: 16px;
+  }
+
+  #level-screen {
+    background-image: url("../assets/components/bg-tablet-niveis.png") !important;
+  }
+
+  #islands-screen {
+    background-image: url("../assets/components/bg-mobile-tablet-temas.png") !important;
+  }
+
+  .screen {
+    padding: 20px;
+    justify-content: flex-start;
+  }
+
+  #level-screen {
+    padding-top: 60px;
+  }
+
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px 40px;
+    max-width: 800px;
+  }
+
+  .theme-preview {
+    font-size: 2.5em;
+  }
+
+  .theme-card h3 {
+    font-size: 1em;
+  }
+
+  .levels-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  .level-card {
+    min-height: 120px;
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    margin-top: 90px;
+    margin-bottom: 50px;
+  }
+}
+
+/* ===== DESKTOP GRANDE ===== */
+@media (min-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .screen {
+    padding: 30px;
+  }
+
+  #level-screen {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 35px;
+    max-width: 1000px;
+  }
+
+  .theme-preview {
+    font-size: 2em;
+  }
+
+  .theme-card h3 {
+    font-size: 1.1em;
+  }
+
+  h2 {
+    font-size: 3em;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1600px) {
+  body {
+    font-size: 15px;
+  }
+
+  #themes-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+  }
+
+  .theme-preview {
+    font-size: 1.5em;
+  }
+
+  .theme-card h3 {
+    font-size: 1.5em;
+  }
+
+  #levels-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    padding: 0 40px;
+  }
+
+  h2 {
+    font-size: 3em;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  h2 {
+    font-size: 1.8em;
+    margin-top: 9px;
+    margin-bottom: 5px;
+  }
+
+  #start-screen {
+  background-image: url("../assets/components/bg-desktop-inicial.png");
+  }
+
+  #islands-screen {
+    background-image: url("../assets/components/bg-desktop-temas.png");
+  }
+
+  #level-screen {
+    background-image: url("../assets/components/bg-desktop-niveis2.png");
+  }
+
+  #info-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+  }
+
+  #credits-screen {
+    background-image: url("../assets/components/bg-desktop-jogo.png");
+  }
+
+  #game-screen {
+    background-image: url("../assets/components/bg-desktop-jogo2.png");
+  }
+}
+
+/* ===== TEXTO RAINBOW ===== */
+.rainbow-text {
+  display: inline-block;
+}
+
+.rainbow-text span:nth-child(1) {
+  color: #ffcc33;
+}
+
+.rainbow-text span:nth-child(2) {
+  color: #357cbe;
+}
+
+.rainbow-text span:nth-child(3) {
+  color: #dd499f;
+}
+
+.rainbow-text span:nth-child(4) {
+  color: #179489;
+}
+
+.rainbow-text span:nth-child(5) {
+  color: #e25821;
+}
+
+.rainbow-text span:nth-child(6) {
+  color: #a3328b;
+}
+
+.rainbow-text span:nth-child(7) {
+  color: #ffcc33;
+}
+
+.rainbow-text span:nth-child(8) {
+  color: #357cbe;
+}
+
+.rainbow-text span:nth-child(9) {
+  color: #df1661;
+}
+
+.rainbow-text span:nth-child(10) {
+  color: #509a41;
+}
+
+.rainbow-text span:nth-child(11) {
+  color: #f3783c;
+}
+
+.rainbow-text span:nth-child(12) {
+  color: #a3328b;
+}
+
+.rainbow-text span:nth-child(13) {
+  color: #ffcc33;
+}
+
+.rainbow-text span:nth-child(14) {
+  color: #357cbe;
+}
+
+.rainbow-text span:nth-child(15) {
+  color: #df1661;
+}
+
+.rainbow-text span:nth-child(16) {
+  color: #509a41;
+}
+
+.rainbow-text span:nth-child(17) {
+  color: #f3783c;
+}
+
+.rainbow-text span:nth-child(18) {
+  color: #179489;
+}
+
+.rainbow-text span:nth-child(19) {
+  color: #dd499f;
+}
+
+.rainbow-text span:nth-child(20) {
+  color: #509a41;
+}
+
+.rainbow-text span:nth-child(21) {
+  color: #d92333;
+}
+
+.rainbow-text span:nth-child(22) {
+  color: #a3328b;
+}
+
+.rainbow-text span:nth-child(23) {
+  color: #ffcc33;
+}
+
+.rainbow-text span:nth-child(24) {
+  color: #357cbe;
+}
+
+.rainbow-text span:nth-child(25) {
+  color: #df1661;
+}
+
+.rainbow-text span:nth-child(26) {
+  color: #509a41;
+}

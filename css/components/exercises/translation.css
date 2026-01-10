@@ -1,0 +1,275 @@
+.exercise-container.translation {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+}
+
+/* Título do exercício */
+.exercise-container.translation .question {
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-style: normal;
+}
+
+.translation {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text-to-translate {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 15px;
+  background: linear-gradient(0deg,
+    rgb(155, 68, 136) 37%,
+    rgb(187, 103, 166) 100%);
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  line-height: 1.4;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.translation-input {
+  width: 100%;
+  min-height: 15vh;
+  padding: 2vh;
+  font-size: 1.1em;
+  border: 3px solid #dee2e6;
+  border-radius: 10px;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.translation-input:focus {
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+  outline: none;
+}
+
+.translation-input.correct {
+  border-color: #007a52;
+  background: #e7fff7fb;
+  color: #007a52;
+}
+
+.translation-input.incorrect {
+  border-color: #a14242;
+  background: #fde4e4;
+  color: #a14242;
+}
+
+.translation-input::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Instruções para o textarea */
+.input-instructions {
+  font-size: 0.85em;
+  color: #6c757d;
+  margin-top: -12px;
+  font-style: italic;
+}
+
+/* Botão de verificação */
+.exercise-container.translation .check-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, #4A85C5 0%, #1f67b4 60%, #2a64a7 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.exercise-container.translation .check-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animações */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.translation .text-to-translate {
+  animation: slideIn 0.5s ease;
+}
+
+/* MOBILE FIRST - AJUSTES PARA TELAS MAIORES */
+
+/* Tablets pequenos e dispositivos maiores */
+@media (min-width: 481px) {
+  .text-to-translate {
+    font-size: 1.5em;
+    padding: 16px;
+  }
+
+  .translation-input {
+    padding: 18px;
+    font-size: 1.15em;
+    min-height: 110px;
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media screen and (min-width: 768px) {
+  .exercise-container.translation {
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 18px;
+    width: 100%;
+  }
+
+  .exercise-container.translation .question {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+
+  .translation {
+    gap: 25px;
+  }
+
+  .text-to-translate {
+    font-size: 1.6em;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .translation-input {
+    padding: 20px;
+    font-size: 1.2em;
+    min-height: 120px;
+    border-radius: 12px;
+  }
+
+  .input-instructions {
+    font-size: 0.9em;
+    margin-top: -15px;
+  }
+
+  .exercise-container.translation .check-button {
+    padding: 22px;
+    font-size: 1.3em;
+    border-radius: 12px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .exercise-container.translation {
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .exercise-container.translation .question {
+    font-size: 1.5em;
+  }
+
+  .translation-input {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+
+  .text-to-translate {
+    font-size: 1.5em;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .exercise-container.translation .check-button {
+    padding: 16px;
+    font-size: 1.1em;
+    margin-top: 20px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .exercise-container.translation {
+    padding: 35px;
+    min-width: 80%;
+  }
+
+  .exercise-container.translation .question {
+    font-size: 1.7em;
+  }
+
+  .translation-input {
+    padding: 12px;
+    font-size: 1.2em;
+  }
+
+  .text-to-translate {
+    font-size: 1.6em;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .exercise-container.translation .check-button {
+    padding: 24px;
+    font-size: 1.4em;
+    margin-top: 20px;
+  }
+}
+
+/* Modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .exercise-container.translation {
+    padding: 22px;
+    width: 100%;
+  }
+
+  .text-to-translate {
+    padding: 12px;
+    font-size: 1.2em;
+  }
+
+  .translation-input {
+    min-height: 80px;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .exercise-container.translation .check-button {
+    padding: 15px;
+    margin-top: 10px;
+  }
+}

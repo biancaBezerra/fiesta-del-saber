@@ -1,0 +1,338 @@
+.exercise-container.emoji-translation {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px auto;
+  min-width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+  height: auto;
+}
+
+/* Título do exercício */
+.exercise-container.emoji-translation .question {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-style: normal;
+}
+
+.emoji-translation {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Display do emoji */
+.emoji-translation-display {
+  font-size: 2.5em;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8%;
+}
+
+/* Container de opções */
+.emoji-translation .options-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.emoji-translation .option {
+  padding: 2vh 3%;
+  background: #f8f9fa;
+  border: 3px solid #e9ecef;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: left;
+}
+
+.emoji-translation .option:hover {
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+  transform: translateY(-2px);
+}
+
+.emoji-translation .option.selected {
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+  transform: scale(1.02);
+}
+
+.emoji-translation .option.correct {
+  border-color: #007a52;
+  background: #e7fff7fb;
+  color: #007a52;
+  animation: pulseCorrect 0.6s ease;
+}
+
+.emoji-translation .option.incorrect {
+  border-color: #a14242;
+  background: #fde4e4;
+  color: #a14242;
+  animation: shake 0.5s ease;
+}
+
+/* Botão de verificação */
+.exercise-container.emoji-translation .check-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, #4A85C5 0%, #1f67b4 60%, #2a64a7 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exercise-container.emoji-translation .check-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animações */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseCorrect {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* MOBILE FIRST - AJUSTES PARA TELAS MAIORES */
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-height: 700px) {
+  .exercise-container.emoji-translation {
+    padding: 20px;
+  }
+
+  .exercise-container.emoji-translation .question {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .emoji-translation .options-container {
+    gap: 8px;
+    margin: 20px 0;
+  }
+
+  .emoji-translation-display {
+    font-size: 2em;
+  }
+
+  .exercise-container.emoji-translation .check-button {
+    padding: 14px;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+/* Tablets pequenos e dispositivos maiores */
+@media (min-width: 481px) {
+  .emoji-translation-display {
+    font-size: 2.8em;
+  }
+
+  .emoji-translation .option {
+    padding: 18px 22px;
+    font-size: 1.15em;
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media screen and (min-width: 768px) {
+  .exercise-container.emoji-translation {
+    padding: 30px;
+    margin: 20px auto;
+  }
+
+  .exercise-container.emoji-translation .question {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .emoji-translation-display {
+    font-size: 3em;
+    height: 15%;
+  }
+
+  .emoji-translation .options-container {
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .emoji-translation .option {
+    padding: 20px 25px;
+    font-size: 1.2em;
+  }
+
+  .exercise-container.emoji-translation .check-button {
+    padding: 22px;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .exercise-container.emoji-translation {
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+  }
+
+  .exercise-container.emoji-translation .question {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+
+  .emoji-translation-display {
+    font-size: 3.2em;
+    height: 10%;
+  }
+
+  .emoji-translation .options-container {
+    gap: 6px;
+    margin: 30px 0;
+  }
+
+  .emoji-translation .option {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  .exercise-container.emoji-translation .check-button {
+    padding: 16px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .exercise-container.emoji-translation {
+    padding: 35px;
+    min-width: 80%;
+  }
+
+  .exercise-container.emoji-translation .question {
+    font-size: 1.8em;
+    margin-top: 10px;
+  }
+
+  .emoji-translation-display {
+    font-size: 5em;
+  }
+
+  .emoji-translation .options-container {
+    gap: 12px;
+    margin: 30px 0;
+  }
+
+  .emoji-translation .option {
+    padding: 18px 25px;
+    font-size: 1.2em;
+  }
+
+  .exercise-container.emoji-translation .check-button {
+    padding: 24px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 1.4em;
+  }
+}
+
+/* Modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .exercise-container.emoji-translation {
+    padding: 15px;
+    width: 70%;
+  }
+
+  .exercise-container.emoji-translation .question {
+    font-size: 1.2em;
+  }
+
+  .emoji-translation-display {
+    font-size: 2em;
+    height: 6%;
+  }
+
+  .emoji-translation .options-container {
+    gap: 8px;
+    margin: 15px 0;
+  }
+
+  .emoji-translation .option {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 1em;
+  }
+
+  .exercise-container.emoji-translation .check-button {
+    border-radius: 10px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    padding: 12px;
+  }
+}

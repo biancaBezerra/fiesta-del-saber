@@ -91,7 +91,7 @@ const EMOJI_TYPE = {
 
     // === FÁCIL === verbs
     {
-      question: "👧 Ela está feliz 😊",
+      question: "👧 Ella está feliz 😊",
       answer: "La niña está feliz",
       options: [
         "La niña está feliz",
@@ -103,7 +103,7 @@ const EMOJI_TYPE = {
       island: "verbs",
     },
     {
-      question: "🐱 O gato é grande",
+      question: "🐱 El gato es grande",
       answer: "El gato es grande",
       type: "multiple_choice",
       options: ["El gato es pequeño", "El gato es azul", "El gato es grande"],
@@ -113,7 +113,7 @@ const EMOJI_TYPE = {
     },
 
     {
-      question: "👨‍👩‍👧 Eles são uma família",
+      question: "👨‍👩‍👧 Ellos son una familia",
       answer: "Ellos son una familia",
       options: [
         "Ellos son una familia",
@@ -126,7 +126,7 @@ const EMOJI_TYPE = {
     },
 
     {
-      question: "📖 É um livro",
+      question: "📖 Es un libro",
       answer: "Es un libro",
       type: "multiple_choice",
       options: ["Es una pelota", "Es un libro", "Es una silla"],
@@ -136,7 +136,7 @@ const EMOJI_TYPE = {
     },
 
     {
-      question: "🏃 Ele corre",
+      question: "🏃 Él corre",
       answer: "Él corre",
       type: "multiple_choice",
       options: ["Él duerme", "Él corre", "Él canta"],
@@ -145,7 +145,7 @@ const EMOJI_TYPE = {
       island: "verbs",
     },
     {
-      question: "👧 Ela come 🍎",
+      question: "👧 Ella come 🍎",
       answer: "Ella come",
       type: "multiple_choice",
       options: ["Ella come", "Ella duerme", "Ella salta"],
@@ -154,7 +154,7 @@ const EMOJI_TYPE = {
       island: "verbs",
     },
     {
-      question: "🔴 A bola é vermelha",
+      question: "🔴 La pelota es roja",
       answer: "La pelota es roja",
       type: "multiple_choice",
       options: ["La pelota es roja", "La pelota es azul", "La pelota es verde"],

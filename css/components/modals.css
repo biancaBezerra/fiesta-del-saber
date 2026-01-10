@@ -1,0 +1,530 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.877);
+  backdrop-filter: blur(1px);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  height: fit-content;
+  position: relative;
+  box-shadow:
+    0 0 25px rgba(255, 238, 0, 0.6),
+    0 0 60px rgba(255, 238, 0, 0.45);
+  overflow-y: auto;
+}
+
+/* Estilos específicos para o modal de habilidades */
+#skill-modal .modal-content {
+  max-width: 600px;
+  text-align: left;
+  /* background: rgba(226, 226, 226, 0.842); */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 25px rgba(255, 238, 0, 0.6),
+    0 0 60px rgba(255, 238, 0, 0.45);
+  /* box-shadow: none; */
+  border: none;
+  padding: 15px;
+}
+
+.rainbow-text.modal-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  display: block;
+}
+
+.rainbow-text.modal-title span {
+  display: inline-block;
+}
+
+
+
+#skill-modal h4 {
+  color: #2c2c2c;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.code-details {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border-left: 4px solid #ffcc33;
+  border-right: 4px solid #ffcc33;
+  box-shadow:
+    0 -2px 8px rgba(128, 128, 128, 0.2),
+    0 2px 8px rgba(128, 128, 128, 0.2);
+}
+
+.code-details p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #202020;
+  font-size: 1em;
+}
+
+.code-details strong {
+  color: #a3328b;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: #a3a3a3;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #a3328b;
+  transform: scale(1.1);
+}
+
+.modal-actions {
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rainbow-text.help-title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 0px rgb(155, 155, 155) !important;
+}
+
+.rainbow-text.help-title span {
+  text-shadow: inherit !important;
+}
+
+.rainbow-text.pause-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.final-score {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.icon-modal {
+  font-size: 5em;
+  margin-bottom: 10px;
+}
+
+/* Barra de Progresso de Estrelas ESTILOSA */
+.stars-progress {
+  position: relative;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(250, 216, 124, 0.904));
+}
+
+.star-badge {
+  position: relative;
+  width: 20px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.star-icon-large {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  font-size: 3.5em;
+  z-index: 10;
+}
+
+.progress-container {
+  flex: 1;
+  position: relative;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 96%;
+  height: 45px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(0deg,
+    rgb(155, 68, 136) 37%,
+    rgb(187, 103, 166) 100%);
+  border-radius: 18px;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%);
+  animation: shimmer 1.5s infinite;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* Quando a barra está cheia, o texto fica branco para melhor contraste */
+.progress-bar.full .progress-text {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animações para a estrela */
+@keyframes starPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.star-badge.pulse {
+  animation: starPulse 1s ease-in-out;
+}
+
+.rainbow-text.level-complete-title {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-size: 2.4em;
+}
+
+#level-complete-modal p {
+  line-height: 1.5;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+.rainbow-text.all-levels-complete-title {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-size: 1.8em;
+}
+
+#all-levels-complete-modal p {
+  line-height: 1.2;
+  font-size: 1em;
+  font-weight: 500;
+  color: #333;
+}
+
+.modal-actions .btn-primary, .modal-actions .btn-secondary, .btn-secondary-pause-modal {
+  font-size: 1.1em;
+  max-width: 350px;
+}
+
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-height: 700px)  {
+  .rainbow-text.pause-title, .rainbow-text.help-title, .rainbow-text.level-complete-title {
+    font-size: 2em;
+  }
+
+  #level-complete-modal p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .rainbow-text.all-levels-complete-title, .rainbow-text.level-complete-title {
+    font-size: 2.5em;
+  }
+
+  #all-levels-complete-modal p {
+    line-height: 1.2;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  #level-complete-modal p {
+    font-size: 1.3em;
+  }
+  
+  .progress-text {
+    font-size: 1.2em;
+  }
+
+  .modal-actions .btn-primary, .modal-actions .btn-secondary, .btn-secondary-pause-modal {
+    font-size: 1.2em;
+    max-width: 350px;
+  }
+
+  .modal-content {
+    max-width: 600px;
+    height: fit-content;
+    width: fit-content;
+    padding: 40px;
+  }
+
+  .progress-bar {
+    width: 85%;
+    height: 50px;
+  }
+
+  .star-icon-large {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+  }
+
+  .rainbow-text.help-title {
+    font-size: 3em;
+  }
+
+  #skill-modal .modal-content {
+    max-width: 60%;
+    padding: 20px;
+  }
+
+  .code-details {
+    padding: 15px;
+  }
+
+  .code-details p {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-actions .btn-primary, .modal-actions .btn-secondary, .btn-secondary-pause-modal {
+    font-size: 1em;
+    max-width: 280px;
+    height: 45px;
+  }
+
+  .rainbow-text.all-levels-complete-title {
+    font-size: 1.8em;
+  }
+
+  #all-levels-complete-modal p, .progress-text {
+    line-height: 1.2;
+    font-size: 1em;
+  }
+
+  .progress-bar {
+    width: 75%;
+    height: 45px;
+    justify-content: center;
+  }
+  
+  .star-icon-large {
+    position: absolute;
+    left: 32px;
+    top: -6px;
+    font-size: 3.2em;
+    z-index: 10;
+  }
+
+  .modal-content {
+    max-width: 600px;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .modal-content {
+    max-width: 600px;
+    height: fit-content;
+    width: fit-content;
+    padding: 25px;
+  }
+
+  .rainbow-text.all-levels-complete-title {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+  }
+
+  #all-levels-complete-modal p {
+    line-height: 1.2;
+    font-size: 1.3em;
+  }
+
+  .rainbow-text.level-complete-title {
+    font-size: 2.5em;
+  }
+
+  #level-complete-modal p, .progress-text {
+    font-size: 1.4em;
+  }
+
+  .progress-bar {
+    width: 89%;
+    height: 50px;
+    align-items: center;
+  }
+
+  .star-icon-large {
+    left: 4px;
+    top: -14px;
+    font-size: 3.8em;
+  }
+
+  .modal-actions .btn-primary, .modal-actions .btn-secondary, .btn-secondary-pause-modal {
+    font-size: 1.4em;
+    max-width: 350px;
+    height: 55px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .modal-content {
+    margin: 30px 0;
+    max-width: 400px;
+    max-height: 320px;
+    height: fit-content;
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+
+  .modal-actions {
+    margin-top: 0px;
+    gap: 6px;
+  }
+
+  .rainbow-text.modal-title {
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+
+  #level-complete-modal p {
+    font-size: 0.9rem;
+  }
+
+  #all-levels-complete-modal p {
+    line-height: 1.2;
+    font-size: 0.9em;
+    margin-bottom: 0px;
+  }
+
+  .rainbow-text.all-levels-complete-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-actions .btn-primary, .modal-actions .btn-secondary, .btn-secondary-pause-modal {
+    font-size: 0.9em;
+    max-width: 260px;
+  }
+
+  .icon-modal {
+    font-size: 3em;
+  }
+
+  .star-icon-large {
+    top: 4px;
+    left: -2px;
+    font-size: 2.5em;
+  }
+
+  .progress-bar {
+    width: 92%;
+    height: 35px;
+  }
+
+  .progress-container {
+    display: flex;
+    flex: none;
+    width: 75%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .progress-text {
+    font-size: 0.95rem;
+  }
+
+  .stars-progress {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+}

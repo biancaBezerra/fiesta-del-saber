@@ -1,0 +1,206 @@
+/* ===== ESTILOS BASE (MOBILE FIRST) - IMAGENS MAIORES ===== */
+#themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.theme-card {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+}
+
+.theme-preview {
+  width: 20vw;
+  height: 20vw;
+  margin: 0 auto 12px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em;
+  overflow: hidden;
+  position: relative;
+  background: transparent !important;
+}
+
+.theme-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.theme-card:hover .theme-image {
+  transform: scale(1.2);
+  /* border-color: #4CAF50; */
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
+}
+
+.theme-card h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.3;
+  padding: 5px 0;
+  text-transform: uppercase;
+}
+
+/* Remove todas as cores de fundo dos temas */
+.animals,
+.fruitsVegetables,
+.foods,
+.nature,
+.city,
+.school,
+.classroom,
+.farm {
+  background: transparent !important;
+}
+
+/* ===== TABLETS (min-width: 768px) ===== */
+@media (min-width: 768px) {
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .theme-preview {
+    width: 15vw;
+    height: 15vw;
+    font-size: 2.8em;
+    border-radius: 18px;
+    margin-bottom: 15px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+}
+
+/* ===== DESKTOP (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 35px;
+  }
+
+  .theme-preview {
+    width: 150px;
+    height: 150px;
+    font-size: 3.2em;
+    border-radius: 20px;
+    margin-bottom: 15px;
+  }
+
+  .theme-card h3 {
+    font-size: 0.9em;
+  }
+}
+
+/* ===== TELAS GRANDES (min-width: 1440px) ===== */
+@media (min-width: 1440px) {
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .theme-preview {
+    width: 180px;
+    height: 180px;
+    font-size: 3.5em;
+  }
+}
+
+/* ===== ORIENTAÇÃO PAISAGEM EM MOBILE ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  #themes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .theme-preview {
+    width: 90px;
+    height: 90px;
+    font-size: 2em;
+  }
+
+  .theme-card h3 {
+    font-size: 0.9em;
+  }
+}
+
+/* ===== TELAS MUITO PEQUENAS (max-width: 360px) ===== */
+@media (max-width: 360px) {
+  #themes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .theme-preview {
+    width: 150px;
+    height: 150px;
+    font-size: 2em;
+  }
+
+  .theme-card h3 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  #themes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    ;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .theme-preview {
+    width: 120px;
+    height: 120px;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .theme-preview {
+    width: 120px;
+    height: 120px;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+}

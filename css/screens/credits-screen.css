@@ -1,0 +1,287 @@
+/* ===== CREDITS SCREEN - MOBILE FIRST ===== */
+#credits-screen {
+  color: #333;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.rainbow-text.creditos {
+  font-size: 2.8em;
+  text-align: center;
+  margin: 15vh 0 8vh;
+}
+
+.credits-content {
+  max-width: 300px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  padding-top: 50px;
+  border-radius: 22px;
+  margin: 5vh 0 6vh;
+  position: relative;
+  box-shadow:
+    0 0 15px rgba(255, 238, 0, 0.6),
+    0 0 40px rgba(255, 238, 0, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  border: 10px solid rgba(253, 238, 21, 0.4);
+  background-clip: padding-box;
+}
+
+.credits-content::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  border-radius: 28px;
+  z-index: -1;
+  box-shadow:
+    0 0 25px rgba(255, 238, 0, 0.6),
+    0 0 60px rgba(255, 238, 0, 0.45);
+  filter: blur(8px);
+}
+
+.credits-girl {
+  position: absolute;
+  width: 150px;
+  height: 130px;
+  background: url("/assets/components/menino2.png") no-repeat center center;
+  background-size: contain;
+  transform: translateX(-50%);
+  top: -12vh;
+  left: 18%;
+  z-index: 1000;
+}
+
+.credits-section {
+  margin-bottom: 15px;
+}
+
+.credits-section h3 {
+  color: #357cbe;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.credits-section p {
+  line-height: 1.3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1d1d1d;
+  margin-bottom: 8px;
+}
+
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-width: 360px) and (max-height: 700px) {
+  .rainbow-text.creditos {
+    font-size: 2.5em;
+    margin-top: 90px;
+    margin-bottom: 50px;
+  }
+  .credits-girl {
+    top: -6.5em;
+    left: 16%;
+  }
+}
+
+/* ===== 481px+ ===== */
+@media (min-width: 481px) {
+  .rainbow-text.creditos {
+    font-size: 3.2em;
+    margin-top: 120px;
+    margin-bottom: 60px;
+  }
+
+  .credits-content {
+    max-width: 400px;
+    padding: 28px 32px;
+    padding-top: 55px;
+  }
+
+  .creditos .rainbow-text {
+    font-size: 2em;
+  }
+
+  .credits-girl {
+    width: 130px;
+    height: 140px;
+    top: -7em;
+    left: 14%;
+  }
+
+  .credits-section h3 {
+    font-size: 1.15rem;
+  }
+
+  .credits-section p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== 768px+ ===== */
+@media screen and (min-width: 768px) {
+  #credits-screen {
+    padding: 0 30px;
+  }
+
+  .rainbow-text.creditos {
+    font-size: 4em;
+    margin-top: 160px;
+    margin-bottom: 25px;
+  }
+
+  .credits-girl {
+    width: 190px;
+    height: 170px;
+    top: -7.5em;
+    left: 12%;
+  }
+
+  .credits-content {
+    max-width: 600px;
+    padding: 35px 45px;
+    padding-top: 60px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+
+  .credits-section {
+    margin-bottom: 20px;
+  }
+
+  .credits-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .credits-section p {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+}
+
+/* ===== 1024px+ ===== */
+@media screen and (min-width: 1024px) {
+  #credits-screen {
+    padding: 0 40px;
+    justify-content: center;
+  }
+
+  .rainbow-text.creditos {
+    font-size: 3.2em;
+    margin-top: 150px;
+    margin-bottom: 10px;
+  }
+
+  .credits-girl {
+    width: 250px;
+    height: 200px;
+    top: -9.5em;
+    left: 10%;
+  }
+
+  .credits-content {
+    max-width: 800px;
+    padding: 45px 55px;
+    padding-top: 70px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+
+  .credits-section {
+    margin-bottom: 25px;
+  }
+
+  .credits-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .credits-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ===== 1600px+ ===== */
+@media (min-width: 1600px) {
+  .rainbow-text.creditos {
+    font-size: 4.5em;
+    margin-top: 40vh;
+    margin-bottom: 40px;
+  }
+
+  .credits-girl {
+    width: 300px;
+    height: 250px;
+    top: -12em;
+    left: 10%;
+  }
+
+  .credits-content {
+    max-width: 1000px;
+    padding: 55px 65px;
+    padding-top: 80px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+
+  .credits-section {
+    margin-bottom: 30px;
+  }
+
+  .credits-section h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .credits-section p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+  }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  #credits-screen {
+    padding: 0 15px;
+    justify-content: flex-start;
+  }
+
+  .rainbow-text.creditos {
+    font-size: 2.8em;
+    margin-top: 70px;
+    margin-bottom: 15px;
+  }
+
+  .credits-girl {
+    width: 140px;
+    height: 120px;
+    top: -6em;
+    left: 8%;
+    transform: translateX(-50%);
+  }
+
+  .credits-content {
+    max-width: 700px;
+    padding: 20px 25px;
+    padding-top: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .credits-section {
+    margin-bottom: 12px;
+  }
+
+  .credits-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .credits-section p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+}

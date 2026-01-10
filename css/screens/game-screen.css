@@ -1,0 +1,262 @@
+#game-screen {
+  /* background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); */
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  justify-content: flex-start;
+}
+
+/* ========== HEADER UNIFICADO ========== */
+.game-header-unified {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.game-header-unified .header-left,
+.game-header-unified .header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botões do header unificado */
+.btn-info-unified,
+.btn-help-unified,
+.btn-pause-unified {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg,
+    rgba(190, 76, 160, 0.9),
+    rgba(120, 32, 102, 0.9));
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-back-unified:hover,
+.btn-info-unified:hover,
+.btn-help-unified:hover,
+.btn-pause-unified:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de mute no header */
+.game-header-unified .global-mute-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(180deg, #4A85C5 0%, #164678 60%, #244F80 100%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* ========== HEADERS ANTIGOS (ESCONDER) ========== */
+.game-header-mobile,
+.game-header-desktop,
+.game-header-desktop-with-back {
+  display: none;
+}
+
+/* ========== STATS ========== */
+/* Container para score e progresso LADO A LADO centralizado - MOBILE */
+.game-header-stats.mobile-visible {
+  display: flex;
+  margin-top: 10vh;
+  width: 100%;
+  flex-direction: row;
+}
+
+/* Esconder elementos desktop no mobile */
+.game-header-stats.desktop-visible {
+  display: none;
+}
+
+.score,
+.progress {
+  padding: 10px 20px;
+  border-radius: 20px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* ========== CONTAINER DO JOGO ========== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  max-width: 1200px;
+  gap: 15px;
+  margin-top: 4vh;
+  height: auto;
+  min-height: auto;
+}
+
+.game-footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  bottom: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* ========== RESPONSIVO ========== */
+/* ===== TABLET PEQUENA (481px+) ===== */
+@media (min-width: 481px) { 
+  .game-header-stats.mobile-visible {
+    justify-content: center;
+  }
+
+  .score, .progress {
+    font-size: 1.2rem;
+  }
+}
+/* TABLET - TODOS OS ELEMENTOS EM UMA LINHA */
+@media (min-width: 768px) {
+
+  /* Esconder elementos mobile no tablet/desktop */
+  .game-header-stats.mobile-visible {
+    display: none;
+  }
+
+  /* Mostrar elementos desktop no tablet/desktop */
+  .game-header-stats.desktop-visible {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 80px;
+    font-size: 1.1em;
+    flex-wrap: nowrap;
+  }
+
+  .app-container {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+    width: 80vw;
+  }
+
+  .score,
+  .progress {
+    font-size: 1.3em;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .game-header-stats.desktop-visible {
+    font-size: 1.2em;
+    gap: 50px;
+    margin-top: 30px;
+  }
+
+  .app-container {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 5px;
+    width: 60vw;
+  }
+
+  .score,
+  .progress {
+    font-size: 1.1em;
+  }
+
+  .game-footer {
+    bottom: 10px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .game-header-stats.desktop-visible {
+    font-size: 1.2em;
+    gap: 50px;
+    margin-top: 80px;
+  }
+
+  .app-container {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+    width: 75vw;
+  }
+
+  .score, .progress {
+    font-size: 1.5em;
+  }
+}
+
+/* LANDSCAPE MOBILE */
+@media (max-height: 600px) and (orientation: landscape) {
+  .game-header-unified {
+    height: 50px;
+  }
+
+  .game-header-stats.mobile-visible {
+    margin-top: 55px;
+    font-size: 0.9em;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  /* .game-header-stats.desktop-visible {
+    margin-top: 10px;
+  } */
+
+  .app-container {
+    height: auto;
+    margin-top: 0;
+    gap: 10px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    width: 68vw;
+  }
+
+  .score,
+  .progress {
+    font-size: 1.1rem;
+  }
+
+  #game-screen {
+    overflow-y: auto;
+    padding-bottom: 80px;
+  }
+
+  .game-footer {
+    bottom: 10px;
+    font-size: 0.8em;
+  }
+
+  .game-header-unified .global-mute-btn {
+    width: 33px;
+    height: 33px;
+    font-size: 1.4em;
+  }
+}
+

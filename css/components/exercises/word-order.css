@@ -1,0 +1,441 @@
+.exercise-container.word-order {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+}
+
+/* Título do exercício */
+.exercise-container.word-order .match-instructions {
+  display: block;
+  text-align: center;
+  font-size: 1.4em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.word-order {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Área das palavras disponíveis */
+.words-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 12px;
+  min-height: 8vh;
+}
+
+/* Palavras individuais (arrastáveis) */
+.word-order-item {
+  padding: 12px 16px;
+  background: linear-gradient(0deg,
+    rgb(155, 68, 136) 37%,
+    rgb(187, 103, 166) 100%);
+  color: white;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+/* QUANDO ESTÁ SEGURANDO/SELECIONADO */
+.word-order-item:active {
+  cursor: grabbing;
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+  color: #333;
+  transform: scale(0.95);
+}
+
+/* ESTADO DURANTE O ARRASTE (enquanto está sendo movido) */
+.word-order-item.dragging {
+  background: #e0eaff !important;
+  border: 2px solid #4A85C5 !important;
+  color: #333 !important;
+  transform: scale(0.95);
+  z-index: 1000;
+  cursor: grabbing !important;
+}
+
+/* Área de construção da frase */
+.sentence-area {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border: 3px dashed #dee2e6;
+  border-radius: 12px;
+  min-height: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+}
+
+.sentence-area::before {
+  background: #e0eaff;
+  border: 2px solid #4A85C5;
+}
+
+.word-order-item.selected {
+  background: linear-gradient(0deg,
+    rgb(155, 68, 136) 37%,
+    rgb(187, 103, 166) 100%);
+  border: 2px solid #a3328b;
+  color: #333;
+  transform: scale(1.05);
+}
+
+/* Slots na frase construída */
+.sentence-slot {
+  padding: 10px 14px;
+  min-height: 50px;
+  background: linear-gradient(0deg,
+    rgb(146, 64, 128) 37%,
+    rgb(226, 130, 202) 100%);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1em;
+  animation: popIn 0.3s ease;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Preview da frase */
+.sentence-preview {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.4;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.sentence-preview.show-correct {
+  background: #e7fff7fb;
+  border: 2px solid #007a52;
+}
+
+.correct-answer {
+  color: #007a52;
+  font-weight: 600;
+}
+
+.correct-answer strong {
+  color: #007a52;
+  /* border: #007a52 2px solid; */
+}
+
+/* Estados de feedback */
+.sentence-slot.correct {
+  border: #007a52 2px solid;
+  background: linear-gradient(135deg, #e7fff7fb 0%, #e7fff7fb 100%);
+  transform: scale(1.05);
+  color: #007a52;
+}
+
+.sentence-slot.incorrect {
+  border: #a14242 2px solid;
+  background: linear-gradient(135deg, #fde4e4 0%, #fde4e4 100%);
+  animation: shake 0.5s ease;
+  color: #a14242;
+}
+
+/* Botão de verificação */
+.exercise-container.word-order .check-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, #4A85C5 0%, #1f67b4 60%, #2a64a7 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.exercise-container.word-order .check-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animações */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* MOBILE FIRST - AJUSTES PARA TELAS MAIORES */
+/* ===== CELULARES MUITO PEQUENOS (max-height: 700px) ===== */
+@media screen and (max-height: 700px) {
+  .exercise-container.word-order .match-instructions {
+    font-size: 1.2em;
+  }
+
+  .words-container {
+    margin: 5px 0;
+    padding: 8px;
+    min-height: 70px;
+  }
+
+  .exercise-container.word-order .check-button {
+    padding: 14px;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+/* Tablets pequenos e dispositivos maiores */
+@media (min-width: 481px) {
+
+  .word-order-item,
+  .sentence-slot {
+    padding: 14px 18px;
+    font-size: 1.05em;
+  }
+
+  .words-container,
+  .sentence-area {
+    gap: 10px;
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media screen and (min-width: 768px) {
+  .exercise-container.word-order {
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 18px;
+    width: 100%;
+  }
+
+  .exercise-container.word-order .match-instructions {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+  }
+
+  .words-container {
+    gap: 12px;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 15px;
+    min-height: 80px;
+  }
+
+  .sentence-area {
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 15px;
+    min-height: 120px;
+    gap: 10px;
+  }
+
+  .word-order-item,
+  .sentence-slot {
+    padding: 22px;
+    border-radius: 14px;
+    font-size: 1.2em;
+    min-height: 70px;
+  }
+
+  .sentence-preview {
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    min-height: 60px;
+    border-radius: 12px;
+  }
+
+  .exercise-container.word-order .check-button {
+    padding: 22px;
+    font-size: 1.3em;
+    border-radius: 12px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .exercise-container.word-order {
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .words-container {
+    margin: 10px 0;
+    padding: 15px;
+    min-height: 80px;
+  }
+
+  .exercise-container.word-order .match-instructions {
+    font-size: 1.4em;
+    margin-bottom: 0px;
+  }
+
+  .sentence-area {
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 15px;
+    min-height: 90px;
+    gap: 10px;
+  }
+
+  .word-order-item, .sentence-slot {
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 1.2em;
+    min-height: 50px;
+  }
+
+  .sentence-preview {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1em;
+    min-height: 50px;
+  }
+
+  .exercise-container.word-order .check-button {
+    padding: 16px;
+    font-size: 1.1em;
+    margin-top: 15px;
+  }
+}
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .exercise-container.word-order {
+    padding: 35px;
+    border-radius: 20px;
+    min-width: 80%;
+  }
+
+  .exercise-container.word-order .match-instructions {
+    font-size: 1.6em;
+    margin-top: 10px;
+  }
+
+  .sentence-area {
+    min-height: 100px;
+  }
+
+  .sentence-slot {
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 1.4em;
+    min-height: 60px;
+  }
+
+  .sentence-preview {
+    padding: 22px;
+    font-size: 1.1em;
+  }
+
+  .exercise-container.word-order .check-button {
+    padding: 24px;
+    margin-top: 25px;
+    font-size: 1.4em;
+  }
+}
+
+/* Modo paisagem em dispositivos móveis */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .exercise-container.word-order {
+    padding: 22px;
+    width: 100%;
+  }
+
+  .words-container {
+    min-height: 60px;
+    padding: 10px;
+    margin: 15px 0;
+  }
+
+  .exercise-container.word-order .match-instructions {
+    margin-top: 15px;
+  }
+
+  .sentence-area {
+    min-height: 80px;
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .sentence-preview {
+    padding: 14px;
+  }
+
+  .word-order-item,
+  .sentence-slot {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    min-height: 48px;
+  }
+
+  .exercise-container.word-order .check-button {
+    padding: 18px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+  }
+}

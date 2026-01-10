@@ -1,0 +1,417 @@
+/* ILHAS SCREEN - MOBILE FIRST */
+#islands-screen {
+  padding: 15px;
+  text-align: center;
+}
+
+h2.rainbow-text.islands-screen-title {
+  margin: 10vh 0 5vh;
+  font-size: 2.8em;
+  text-align: center;
+}
+
+.islands-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 15px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.island-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* .island-card:hover {
+  transform: translateY(-3px);
+} */
+
+.island-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.island-card>* {
+  position: relative;
+  z-index: 2;
+}
+
+.island-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+  transition: 
+    transform 0.7s ease-out,
+    filter 0.5s ease;
+}
+
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.island-card:hover .island-image {
+  animation-play-state: paused;
+  transform: translateY(-20px);
+  filter: brightness(1.08);
+}
+
+.island-card:not(:hover) .island-image {
+  animation-play-state: running;
+}
+
+.island-info {
+  padding: 12px;
+}
+
+.island-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.island-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.island-card p,
+.island-stats {
+  margin: 0;
+  font-size: 0.9rem;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.image-island {
+  width: 200px;
+  height: auto;
+}
+
+/* Progresso das ilhas - classes específicas para evitar conflitos */
+.island-levels {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.island-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.island-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.island-percentage {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #fff;
+  min-width: 35px;
+  text-align: center;
+}
+
+.island-progress-text {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  min-height: 20px;
+}
+
+/* Cores baseadas no progresso */
+.island-progress-fill.progress-low {
+  background: linear-gradient(90deg, #FF9800, #FF5722);
+}
+
+.island-progress-fill.progress-medium {
+  background: linear-gradient(90deg, #FFC107, #FF9800);
+}
+
+.island-progress-fill.progress-high {
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.island-progress-fill.progress-complete {
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  animation: island-pulse 2s infinite;
+}
+
+@keyframes island-pulse {
+  0% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+}
+
+/* Tablet pequena (481px+) */
+@media (min-width: 481px) {
+  #islands-screen {
+    padding: 18px;
+  }
+
+  h2.rainbow-text.islands-screen-title {
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-size: 3.4em;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .island-card {
+    min-height: 160px;
+    border-radius: 13px;
+  }
+
+  .island-icon {
+    font-size: 2.2rem;
+  }
+
+  .island-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .island-card p,
+  .island-stats {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet (768px+) */
+@media screen and (min-width: 768px) {
+  #islands-screen {
+    padding: 20px;
+  }
+
+  h2.rainbow-text.islands-screen-title {
+    margin-top: 150px;
+    margin-bottom: 90px;
+    font-size: 3.8em;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    padding: 10px;
+    max-width: 800px;
+    margin-top: 150px;
+  }
+
+  .island-card {
+    min-height: 180px;
+    border-radius: 14px;
+  }
+
+  .island-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .island-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .island-info {
+    padding: 15px;
+  }
+
+  .island-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .island-card p {
+    font-size: 1.1rem;
+  }
+
+  .island-stats {
+    margin-top: 6px;
+    font-size: 1.4rem;
+  }
+
+  .island-image {
+    width: 300px;
+  }
+}
+
+/* Desktop (1024px+) */
+@media screen and (min-width: 1024px) {
+  h2.rainbow-text.islands-screen-title {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-size: 3.8em;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 350px;
+    padding: 25px;
+    max-width: 1200px;
+  }
+
+  .island-image {
+    width: 250px;
+  }
+
+  .island-card {
+    min-height: 200px;
+    border-radius: 15px;
+    margin-top: -150px;
+  }
+
+  .island-icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+
+  .island-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .island-card p,
+  .island-stats,
+  .island-percentage {
+    font-size: 0.9rem;
+  }
+
+  .image-island {
+    width: 240px;
+  }
+}
+
+/* Desktop grande (1600px+) */
+@media (min-width: 1600px) {
+  h2.rainbow-text.islands-screen-title {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-size: 4.5em;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 550px;
+    max-width: 1200px;
+  }
+
+  .island-image {
+    width: 320px;
+  }
+
+  .island-card {
+    min-height: 250px;
+  }
+
+  .island-icon {
+    font-size: 3.2rem;
+  }
+
+  .island-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .island-card p,
+  .island-stats {
+    font-size: 1.1rem;
+  }
+
+  .image-island {
+    width: 280px;
+  }
+}
+
+/* Landscape em telas pequenas (max-height: 600px) */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  #islands-screen {
+    padding: 10px;
+  }
+
+  h2.rainbow-text.islands-screen-title {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-size: 2.2em;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 180px;
+    padding: 10px;
+  }
+
+  .island-card {
+    min-height: 120px;
+    margin-top: -50px;
+  }
+
+  .island-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .island-info {
+    padding: 8px;
+  }
+
+  .island-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .island-card p,
+  .island-stats {
+    font-size: 0.6rem;
+  }
+
+  .island-image {
+    width: 150px;
+  }
+
+  .island-levels {
+    margin-top: 2px;
+  }
+}
